@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
 /* 注入 Radix UI 的基础样式和变量 */
@@ -7,6 +9,15 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  --font-playfair: 'Playfair Display', serif;
+  --font-inter: 'Inter', sans-serif;
+  --color-black: #000000;
+  --color-gray-400: #CCCCCC;
+  --color-gray-500: #888888;
+  --color-gray-600: #666666;
+
+  --color-gray-200: #E0E0E0;
+  
   /* Shadcn UI 颜色变量 */
   --color-background: 0 0% 100%;
   --color-foreground: 240 10% 3.9%;
