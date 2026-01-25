@@ -1,0 +1,2872 @@
+{
+  "version": "2.6",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 800,
+      "height": 600,
+      "fill": "#FFFFFF",
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "5qFgm",
+      "x": 0,
+      "y": 0,
+      "name": "Reader App",
+      "width": 1440,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Pvqfq",
+          "name": "Header",
+          "width": "fill_container",
+          "padding": [
+            24,
+            56
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "text",
+              "id": "VH4tS",
+              "name": "logoText",
+              "fill": "#000000",
+              "content": "Reader",
+              "fontFamily": "Playfair Display",
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "frame",
+              "id": "dCSXG",
+              "name": "Navigation",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "KqclT",
+                  "name": "navHome",
+                  "fill": "#000000",
+                  "content": "Home",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 16,
+                  "fontWeight": "semibold",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "text",
+                  "id": "Czmb0",
+                  "name": "navLibrary",
+                  "fill": "#888888",
+                  "content": "Library",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bs0Rw",
+              "name": "User Info",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mi7fb",
+                  "name": "userName",
+                  "fill": "#000000",
+                  "content": "Guest Reader",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "medium"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "sFZNI",
+          "name": "Main Content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ubqoA",
+              "name": "Sidebar",
+              "width": 320,
+              "height": "fill_container",
+              "layout": "vertical",
+              "padding": [
+                40,
+                32,
+                0,
+                32
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "n6NE8",
+                  "name": "Sidebar Header",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "4w5my",
+                      "name": "sidebarTitle",
+                      "fill": "#000000",
+                      "content": "Reading List",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 28,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "KNZtD",
+                  "name": "Article List",
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "JHXOi",
+                      "name": "Article 1",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        24,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n2WwX",
+                          "name": "article1Title",
+                          "fill": "#000000",
+                          "content": "The Art of Typography",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "semibold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IOGwI",
+              "name": "Article Content",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "padding": [
+                64,
+                56,
+                0,
+                56
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "7nkdq",
+                  "name": "Article Hero",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "iePAe",
+                      "name": "articleTitle",
+                      "fill": "#000000",
+                      "content": "The Art of Typography",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 56,
+                      "fontWeight": "normal",
+                      "letterSpacing": -2,
+                      "fontStyle": "italic"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "aB5xL",
+                  "name": "Article Body",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "5zePS",
+                      "name": "para1",
+                      "fill": "#333333",
+                      "content": "Typography is more than just selecting fonts. It is the art of arranging type in a way that makes written language legible, readable, and appealing when displayed.",
+                      "lineHeight": 1.8,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "3Shhx",
+          "name": "Footer",
+          "width": "fill_container",
+          "padding": [
+            48,
+            56
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "text",
+              "id": "zcOEA",
+              "name": "footerLogo",
+              "fill": "#000000",
+              "content": "Reader",
+              "fontFamily": "Playfair Display",
+              "fontSize": 18,
+              "fontWeight": "bold",
+              "fontStyle": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "s4OyZ",
+      "x": 1500,
+      "y": 0,
+      "name": "Library Page",
+      "width": 1440,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "O3RER",
+          "name": "Header",
+          "width": "fill_container",
+          "padding": [
+            24,
+            56
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "text",
+              "id": "67Lqw",
+              "name": "logoText",
+              "fill": "#000000",
+              "content": "Reader",
+              "fontFamily": "Playfair Display",
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "frame",
+              "id": "9xHcA",
+              "name": "Navigation",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0E5xP",
+                  "name": "navHome",
+                  "fill": "#888888",
+                  "content": "Home",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "iACze",
+                  "name": "navLibrary",
+                  "fill": "#000000",
+                  "content": "Library",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 16,
+                  "fontWeight": "semibold",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "text",
+                  "id": "7IWat",
+                  "name": "navBookmarks",
+                  "fill": "#888888",
+                  "content": "Bookmarks",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "1yZvV",
+              "name": "User Info",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lXrp6",
+                  "name": "userName",
+                  "fill": "#000000",
+                  "content": "Guest Reader",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "medium"
+                },
+                {
+                  "type": "text",
+                  "id": "aM0Tw",
+                  "name": "userRole",
+                  "fill": "#888888",
+                  "content": "Free Plan",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "1jObu",
+          "name": "Library Hero",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            64,
+            56,
+            48,
+            56
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "9T2mK",
+              "name": "breadcrumb",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9ZSRb",
+                  "name": "crumbHome",
+                  "fill": "#888888",
+                  "content": "Home",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "ha0vQ",
+                  "name": "crumbSlash",
+                  "fill": "#CCCCCC",
+                  "content": "/",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "text",
+                  "id": "gtbFU",
+                  "name": "crumbLibrary",
+                  "fill": "#000000",
+                  "content": "Library",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "gjAGD",
+              "name": "libraryHeader",
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "c1zzE",
+                  "name": "libraryTitleGroup",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "a6dZu",
+                      "name": "libraryTitle",
+                      "fill": "#000000",
+                      "content": "Your Library",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 56,
+                      "fontWeight": "normal",
+                      "letterSpacing": -2,
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "text",
+                      "id": "7UwpZ",
+                      "name": "librarySubtitle",
+                      "fill": "#888888",
+                      "content": "12 articles · 3 categories",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DAvrR",
+                  "name": "libraryActions",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "GalyA",
+                      "name": "btnAdd",
+                      "gap": 8,
+                      "padding": [
+                        12,
+                        24
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "DrSH5",
+                          "name": "btnAddText",
+                          "fill": "#FFFFFF",
+                          "content": "+ Add Article",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "medium"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "6KbwK",
+                      "name": "btnFilter",
+                      "gap": 8,
+                      "padding": [
+                        12,
+                        24
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "kdGRu",
+                          "name": "btnFilterText",
+                          "fill": "#000000",
+                          "content": "Filter",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "medium"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "GJCvf",
+              "name": "filterTags",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "fKMco",
+                  "name": "tagAll",
+                  "padding": [
+                    8,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "8yR4p",
+                      "name": "tagAllText",
+                      "fill": "#FFFFFF",
+                      "content": "All",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "medium"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "bw6eS",
+                  "name": "tagDesign",
+                  "padding": [
+                    8,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "nFIr1",
+                      "name": "tagDesignText",
+                      "fill": "#000000",
+                      "content": "Design",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "atYQd",
+                  "name": "tagTech",
+                  "padding": [
+                    8,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "FSZUA",
+                      "name": "tagTechText",
+                      "fill": "#000000",
+                      "content": "Technology",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "w7Fg4",
+                  "name": "tagBusiness",
+                  "padding": [
+                    8,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "48Of2",
+                      "name": "tagBusinessText",
+                      "fill": "#000000",
+                      "content": "Business",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "7mww5",
+          "name": "Articles Grid",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            48,
+            56,
+            64,
+            56
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "eVbeZ",
+              "name": "sectionHeader",
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VPcif",
+                  "name": "sectionTitle",
+                  "fill": "#000000",
+                  "content": "Recent Articles",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 28,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "frame",
+                  "id": "9gHKp",
+                  "name": "sortDropdown",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "hKm6A",
+                      "name": "sortLabel",
+                      "fill": "#888888",
+                      "content": "Sort by:",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xYUWH",
+                      "name": "sortValue",
+                      "fill": "#000000",
+                      "content": "Recent ▾",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "medium"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "0KZum",
+              "name": "articlesGrid",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "DQGmQ",
+                  "name": "card1",
+                  "width": "fill_container",
+                  "padding": [
+                    32,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "7Wzv5",
+                      "name": "card1Left",
+                      "width": 800,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Hi3UU",
+                          "name": "card1Meta",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "W75Iw",
+                              "name": "card1Tag",
+                              "fill": "#000000",
+                              "content": "Design",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "medium"
+                            },
+                            {
+                              "type": "text",
+                              "id": "rp2pj",
+                              "name": "card1Time",
+                              "fill": "#888888",
+                              "content": "8 min read",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "qesi6",
+                          "name": "card1Title",
+                          "fill": "#000000",
+                          "content": "The Art of Typography",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 24,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "P6iNZ",
+                          "name": "card1Excerpt",
+                          "fill": "#666666",
+                          "content": "Typography is more than just selecting fonts. It is the art of arranging type in a way that makes written language legible, readable, and appealing.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "1zTAY",
+                          "name": "card1Info",
+                          "gap": 24,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "vTe4j",
+                              "name": "card1Author",
+                              "fill": "#888888",
+                              "content": "By Sarah Chen",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "j8nCN",
+                              "name": "card1Date",
+                              "fill": "#888888",
+                              "content": "Jan 25, 2026",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kbstP",
+                      "name": "card1Right",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "2oi22",
+                          "name": "card1Bookmark",
+                          "fill": "#000000",
+                          "content": "Bookmark",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "medium"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CZR4m",
+                  "name": "card2",
+                  "width": "fill_container",
+                  "padding": [
+                    32,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "5QjKt",
+                      "name": "card2Left",
+                      "width": 800,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Nw1gW",
+                          "name": "card2Meta",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "wMGCz",
+                              "name": "card2Tag",
+                              "fill": "#000000",
+                              "content": "Design",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "medium"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Xjckb",
+                              "name": "card2Time",
+                              "fill": "#888888",
+                              "content": "5 min read",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "MXNmv",
+                          "name": "card2Title",
+                          "fill": "#000000",
+                          "content": "Minimalism in Modern Design",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 24,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "u90Zz",
+                          "name": "card2Excerpt",
+                          "fill": "#666666",
+                          "content": "Less is more. Explore how minimalist design principles can create powerful, focused user experiences.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VfUmN",
+                          "name": "card2Info",
+                          "gap": 24,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "dYeN3",
+                              "name": "card2Author",
+                              "fill": "#888888",
+                              "content": "By Alex Kim",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "zCJ66",
+                              "name": "card2Date",
+                              "fill": "#888888",
+                              "content": "Jan 24, 2026",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "aJ8f2",
+                      "name": "card2Right",
+                      "width": "fit_content(0)",
+                      "height": "fit_content(0)",
+                      "gap": 8
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "z8jsS",
+                  "name": "card3",
+                  "width": "fill_container",
+                  "padding": [
+                    32,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "U49Ia",
+                      "name": "card3Left",
+                      "width": 800,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "x6Hb7",
+                          "name": "card3Meta",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "xTyf9",
+                              "name": "card3Tag",
+                              "fill": "#000000",
+                              "content": "Technology",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "medium"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Jpurd",
+                              "name": "card3Time",
+                              "fill": "#888888",
+                              "content": "12 min read",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "2W03m",
+                          "name": "card3Title",
+                          "fill": "#000000",
+                          "content": "The Future of Reading",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 24,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "LgqDz",
+                          "name": "card3Excerpt",
+                          "fill": "#666666",
+                          "content": "How digital transformation is reshaping the way we consume and interact with written content.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VBQCw",
+                          "name": "card3Info",
+                          "gap": 24,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Y8kia",
+                              "name": "card3Author",
+                              "fill": "#888888",
+                              "content": "By Maria Lopez",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "YyNB4",
+                              "name": "card3Date",
+                              "fill": "#888888",
+                              "content": "Jan 23, 2026",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "HCg92",
+                      "name": "card3Right",
+                      "width": "fit_content(0)",
+                      "height": "fit_content(0)",
+                      "gap": 8
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pjxP9",
+                  "name": "card4",
+                  "width": "fill_container",
+                  "padding": [
+                    32,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "qcdUU",
+                      "name": "card4Left",
+                      "width": 800,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "fa1FM",
+                          "name": "card4Meta",
+                          "gap": 12,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Mmyye",
+                              "name": "card4Tag",
+                              "fill": "#000000",
+                              "content": "Business",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "medium"
+                            },
+                            {
+                              "type": "text",
+                              "id": "9A9a0",
+                              "name": "card4Time",
+                              "fill": "#888888",
+                              "content": "6 min read",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "kC0g9",
+                          "name": "card4Title",
+                          "fill": "#000000",
+                          "content": "Building Digital Products",
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 24,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "cHgDE",
+                          "name": "card4Excerpt",
+                          "fill": "#666666",
+                          "content": "A strategic approach to product development that balances user needs with business goals.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "FLNI5",
+                          "name": "card4Info",
+                          "gap": 24,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "5odx8",
+                              "name": "card4Author",
+                              "fill": "#888888",
+                              "content": "By James Wilson",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "guCe7",
+                              "name": "card4Date",
+                              "fill": "#888888",
+                              "content": "Jan 22, 2026",
+                              "fontFamily": "Inter",
+                              "fontSize": 12,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "XU3IF",
+                      "name": "card4Right",
+                      "width": "fit_content(0)",
+                      "height": "fit_content(0)",
+                      "gap": 8
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "TkMle",
+              "name": "pagination",
+              "gap": 24,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cL6OT",
+                  "name": "page1",
+                  "fill": "#000000",
+                  "content": "1",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 16,
+                  "fontWeight": "semibold",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "text",
+                  "id": "Q24GX",
+                  "name": "slash1",
+                  "fill": "#CCCCCC",
+                  "content": "/",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "text",
+                  "id": "9ZCgf",
+                  "name": "page2",
+                  "fill": "#888888",
+                  "content": "2",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "5SKVQ",
+                  "name": "slash2",
+                  "fill": "#CCCCCC",
+                  "content": "/",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "text",
+                  "id": "bxNVX",
+                  "name": "page3",
+                  "fill": "#888888",
+                  "content": "3",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dVByd",
+          "name": "Footer",
+          "width": "fill_container",
+          "padding": [
+            48,
+            56
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ocZBc",
+              "name": "footerLeft",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "atzBB",
+                  "name": "footerLogo",
+                  "fill": "#000000",
+                  "content": "Reader",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "text",
+                  "id": "2JWUT",
+                  "name": "footerTagline",
+                  "fill": "#888888",
+                  "content": "Elegant reading experience",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "a5aG1",
+              "name": "footerRight",
+              "gap": 40,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "g2sUl",
+                  "name": "footerLink1",
+                  "fill": "#888888",
+                  "content": "About",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "s1ak0",
+                  "name": "footerLink2",
+                  "fill": "#888888",
+                  "content": "Privacy",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "7yRsb",
+                  "name": "footerLink3",
+                  "fill": "#888888",
+                  "content": "Terms",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "y6lKL",
+      "x": 0,
+      "y": 0,
+      "name": "Home Page",
+      "width": 1440,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "BfONn",
+          "name": "Header",
+          "width": "fill_container",
+          "padding": [
+            24,
+            56
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "text",
+              "id": "kuDRF",
+              "name": "homeLogo",
+              "fill": "#000000",
+              "content": "Reader",
+              "fontFamily": "Playfair Display",
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "frame",
+              "id": "8w4Xf",
+              "name": "Navigation",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "aE72S",
+                  "name": "homeNavHome",
+                  "fill": "#000000",
+                  "content": "Home",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 16,
+                  "fontWeight": "semibold",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "text",
+                  "id": "zsrLn",
+                  "name": "homeNavLibrary",
+                  "fill": "#888888",
+                  "content": "Library",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "SWWAT",
+                  "name": "homeNavBookmarks",
+                  "fill": "#888888",
+                  "content": "Bookmarks",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "nUMK3",
+              "name": "homeUserInfo",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ppzSJ",
+                  "name": "homeUserName",
+                  "fill": "#000000",
+                  "content": "Guest Reader",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "medium"
+                },
+                {
+                  "type": "text",
+                  "id": "mQM4e",
+                  "name": "homeUserRole",
+                  "fill": "#888888",
+                  "content": "Free Plan",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pUaRY",
+          "name": "homeHero",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            80,
+            56,
+            64,
+            56
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "vp7Gf",
+              "name": "homeTitle",
+              "fill": "#000000",
+              "content": "Welcome back",
+              "fontFamily": "Playfair Display",
+              "fontSize": 64,
+              "fontWeight": "normal",
+              "letterSpacing": -3,
+              "fontStyle": "italic"
+            },
+            {
+              "type": "text",
+              "id": "HoF59",
+              "name": "homeSubtitle",
+              "fill": "#888888",
+              "content": "Continue reading where you left off",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "XjMne",
+          "name": "continueSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            48,
+            56,
+            0,
+            56
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "8pecP",
+              "name": "continueHeader",
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "pQA02",
+                  "name": "continueTitle",
+                  "fill": "#000000",
+                  "content": "Continue Reading",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 28,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "XoCYz",
+              "name": "continueCard",
+              "width": "fill_container",
+              "padding": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "tnbAY",
+                  "name": "continueLeft",
+                  "width": 600,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "6uS3n",
+                      "name": "continueMeta",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ly4oU",
+                          "name": "continueTag",
+                          "fill": "#000000",
+                          "content": "Design",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "medium"
+                        },
+                        {
+                          "type": "text",
+                          "id": "NebRP",
+                          "name": "continueTime",
+                          "fill": "#888888",
+                          "content": "8 min read · 60% complete",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "KiOMt",
+                      "name": "continueCardTitle",
+                      "fill": "#000000",
+                      "content": "The Art of Typography",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 24,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "text",
+                      "id": "rsXp9",
+                      "name": "continueExcerpt",
+                      "fill": "#666666",
+                      "content": "Typography is more than just selecting fonts. It is the art of arranging type...",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "I8zbj",
+                  "name": "continueBtn",
+                  "padding": [
+                    12,
+                    24
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zycmg",
+                      "name": "continueBtnText",
+                      "fill": "#000000",
+                      "content": "Continue Reading →",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "medium"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "W9kbn",
+          "name": "homeFooter",
+          "width": "fill_container",
+          "padding": [
+            48,
+            56
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "text",
+              "id": "dcwim",
+              "name": "homeFooterLogo",
+              "fill": "#000000",
+              "content": "Reader",
+              "fontFamily": "Playfair Display",
+              "fontSize": 18,
+              "fontWeight": "bold",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "text",
+              "id": "gZb5M",
+              "name": "homeFooterTagline",
+              "fill": "#888888",
+              "content": "Elegant reading experience",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ZjEvE",
+      "x": 3000,
+      "y": 0,
+      "name": "Bookmarks Page",
+      "width": 1440,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "zfEYd",
+          "name": "Header",
+          "width": "fill_container",
+          "padding": [
+            24,
+            56
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "text",
+              "id": "oVaU5",
+              "name": "bookmarksLogo",
+              "fill": "#000000",
+              "content": "Reader",
+              "fontFamily": "Playfair Display",
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "frame",
+              "id": "pOg69",
+              "name": "Navigation",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "UeaMb",
+                  "name": "bookmarksNavHome",
+                  "fill": "#888888",
+                  "content": "Home",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "gOwKV",
+                  "name": "bookmarksNavLibrary",
+                  "fill": "#888888",
+                  "content": "Library",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "eToym",
+                  "name": "bookmarksNavBookmarks",
+                  "fill": "#000000",
+                  "content": "Bookmarks",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 16,
+                  "fontWeight": "semibold",
+                  "fontStyle": "italic"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aWOTD",
+              "name": "bookmarksUserInfo",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Ysqty",
+                  "name": "bookmarksUserName",
+                  "fill": "#000000",
+                  "content": "Guest Reader",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "medium"
+                },
+                {
+                  "type": "text",
+                  "id": "jf52y",
+                  "name": "bookmarksUserRole",
+                  "fill": "#888888",
+                  "content": "Free Plan",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "0xEK7",
+          "name": "bookmarksHero",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            64,
+            56,
+            48,
+            56
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "HkfWi",
+              "name": "bookmarksBreadcrumb",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "TWU2u",
+                  "name": "bookmarksCrumbHome",
+                  "fill": "#888888",
+                  "content": "Home",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "KVt5X",
+                  "name": "bookmarksCrumbSlash",
+                  "fill": "#CCCCCC",
+                  "content": "/",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "text",
+                  "id": "07Y3a",
+                  "name": "bookmarksCrumbBookmarks",
+                  "fill": "#000000",
+                  "content": "Bookmarks",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "G4Tkt",
+              "name": "bookmarksTitle",
+              "fill": "#000000",
+              "content": "Your Bookmarks",
+              "fontFamily": "Playfair Display",
+              "fontSize": 56,
+              "fontWeight": "normal",
+              "letterSpacing": -2,
+              "fontStyle": "italic"
+            },
+            {
+              "type": "text",
+              "id": "CueAW",
+              "name": "bookmarksSubtitle",
+              "fill": "#888888",
+              "content": "5 saved articles",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "AbCVF",
+          "name": "bookmarksListSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            48,
+            56,
+            64,
+            56
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "ptDUq",
+              "name": "bookmark1",
+              "width": "fill_container",
+              "padding": [
+                32,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "1PiC5",
+                  "name": "bookmark1Left",
+                  "width": 800,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "PsrvD",
+                      "name": "bookmark1Meta",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "r3rQq",
+                          "name": "bookmark1Tag",
+                          "fill": "#000000",
+                          "content": "Design",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "medium"
+                        },
+                        {
+                          "type": "text",
+                          "id": "GHGmH",
+                          "name": "bookmark1Time",
+                          "fill": "#888888",
+                          "content": "8 min read",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "sYDaE",
+                      "name": "bookmark1Title",
+                      "fill": "#000000",
+                      "content": "The Art of Typography",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 24,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "text",
+                      "id": "PhnMX",
+                      "name": "bookmark1Excerpt",
+                      "fill": "#666666",
+                      "content": "Typography is more than just selecting fonts. It is the art of arranging type in a way that makes written language legible, readable, and appealing.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dkuIZ",
+                      "name": "bookmark1Info",
+                      "gap": 24,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ftduf",
+                          "name": "bookmark1Date",
+                          "fill": "#888888",
+                          "content": "Saved on Jan 25, 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "6pEdM",
+                  "name": "bookmark1Right",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "MVdxT",
+                      "name": "bookmark1Remove",
+                      "fill": "#000000",
+                      "content": "Remove",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "medium"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lcex7",
+              "name": "bookmark2",
+              "width": "fill_container",
+              "padding": [
+                32,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "VWveJ",
+                  "name": "bookmark2Left",
+                  "width": 800,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "cTI1c",
+                      "name": "bookmark2Meta",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "V72PM",
+                          "name": "bookmark2Tag",
+                          "fill": "#000000",
+                          "content": "Technology",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "medium"
+                        },
+                        {
+                          "type": "text",
+                          "id": "sMj40",
+                          "name": "bookmark2Time",
+                          "fill": "#888888",
+                          "content": "12 min read",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "71nsI",
+                      "name": "bookmark2Title",
+                      "fill": "#000000",
+                      "content": "The Future of Reading",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 24,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jsgwm",
+                      "name": "bookmark2Excerpt",
+                      "fill": "#666666",
+                      "content": "How digital transformation is reshaping the way we consume and interact with written content.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "mJNGk",
+                      "name": "bookmark2Info",
+                      "gap": 24,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "TQVNv",
+                          "name": "bookmark2Date",
+                          "fill": "#888888",
+                          "content": "Saved on Jan 24, 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "SfYH5",
+                  "name": "bookmark2Right",
+                  "width": "fit_content(0)",
+                  "height": "fit_content(0)",
+                  "gap": 8
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hoxOa",
+              "name": "bookmark3",
+              "width": "fill_container",
+              "padding": [
+                32,
+                0
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "6h583",
+                  "name": "bookmark3Left",
+                  "width": 800,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Pm0kn",
+                      "name": "bookmark3Meta",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "jGwEp",
+                          "name": "bookmark3Tag",
+                          "fill": "#000000",
+                          "content": "Business",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "medium"
+                        },
+                        {
+                          "type": "text",
+                          "id": "lXFia",
+                          "name": "bookmark3Time",
+                          "fill": "#888888",
+                          "content": "6 min read",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "B5aQJ",
+                      "name": "bookmark3Title",
+                      "fill": "#000000",
+                      "content": "Building Digital Products",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 24,
+                      "fontWeight": "normal",
+                      "fontStyle": "italic"
+                    },
+                    {
+                      "type": "text",
+                      "id": "X9dki",
+                      "name": "bookmark3Excerpt",
+                      "fill": "#666666",
+                      "content": "A strategic approach to product development that balances user needs with business goals.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dEYA9",
+                      "name": "bookmark3Info",
+                      "gap": 24,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "9mGGY",
+                          "name": "bookmark3Date",
+                          "fill": "#888888",
+                          "content": "Saved on Jan 23, 2026",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "a7E4X",
+                  "name": "bookmark3Right",
+                  "width": "fit_content(0)",
+                  "height": "fit_content(0)",
+                  "gap": 8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "REIJI",
+          "name": "bookmarksFooter",
+          "width": "fill_container",
+          "padding": [
+            48,
+            56
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "text",
+              "id": "ZTtKS",
+              "name": "bookmarksFooterLogo",
+              "fill": "#000000",
+              "content": "Reader",
+              "fontFamily": "Playfair Display",
+              "fontSize": 18,
+              "fontWeight": "bold",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "text",
+              "id": "QccpT",
+              "name": "bookmarksFooterTagline",
+              "fill": "#888888",
+              "content": "Elegant reading experience",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "4cZwC",
+      "x": 4500,
+      "y": 0,
+      "name": "Article Detail Page",
+      "width": 1440,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "M29Aw",
+          "name": "Header",
+          "width": "fill_container",
+          "padding": [
+            24,
+            56
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "text",
+              "id": "Jdx4n",
+              "name": "detailLogo",
+              "fill": "#000000",
+              "content": "Reader",
+              "fontFamily": "Playfair Display",
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "frame",
+              "id": "WLKab",
+              "name": "Navigation",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "1kN2V",
+                  "name": "detailNavHome",
+                  "fill": "#888888",
+                  "content": "Home",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Nv6KT",
+                  "name": "detailNavLibrary",
+                  "fill": "#000000",
+                  "content": "Library",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 16,
+                  "fontWeight": "semibold",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "text",
+                  "id": "zuL4v",
+                  "name": "detailNavBookmarks",
+                  "fill": "#888888",
+                  "content": "Bookmarks",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "6Yq0U",
+              "name": "detailUserInfo",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "HkzYX",
+                  "name": "detailUserName",
+                  "fill": "#000000",
+                  "content": "Guest Reader",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "medium"
+                },
+                {
+                  "type": "text",
+                  "id": "6uuvu",
+                  "name": "detailUserRole",
+                  "fill": "#888888",
+                  "content": "Free Plan",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "4jF2o",
+          "name": "backNav",
+          "width": "fill_container",
+          "padding": [
+            32,
+            56
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "Hl8ra",
+              "name": "backArrow",
+              "fill": "#000000",
+              "content": "←",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "2HpOD",
+              "name": "backText",
+              "fill": "#000000",
+              "content": "Back to Library",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "medium"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "H76Ql",
+          "name": "articleHeader",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            64,
+            56,
+            48,
+            56
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "x8B2q",
+              "name": "articleBreadcrumb",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GnrfU",
+                  "name": "crumbLibrary",
+                  "fill": "#888888",
+                  "content": "Library",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "XNS8M",
+                  "name": "crumbSlash1",
+                  "fill": "#CCCCCC",
+                  "content": "/",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "text",
+                  "id": "vnmq6",
+                  "name": "crumbDesign",
+                  "fill": "#888888",
+                  "content": "Design",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "hKBvm",
+                  "name": "crumbSlash2",
+                  "fill": "#CCCCCC",
+                  "content": "/",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "300"
+                },
+                {
+                  "type": "text",
+                  "id": "iTybZ",
+                  "name": "crumbArticle",
+                  "fill": "#000000",
+                  "content": "Article",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FMJqQ",
+              "name": "articleMetaTop",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wnQHz",
+                  "name": "articleTag",
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lVe9O",
+                      "name": "articleTagText",
+                      "fill": "#FFFFFF",
+                      "content": "Design",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "medium"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "i1jqw",
+                  "name": "articleTime",
+                  "fill": "#888888",
+                  "content": "8 min read",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "mlWQZ",
+                  "name": "articleDate",
+                  "fill": "#888888",
+                  "content": "January 25, 2026",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "07TOv",
+              "name": "articleTitle",
+              "fill": "#000000",
+              "content": "The Art of Typography",
+              "fontFamily": "Playfair Display",
+              "fontSize": 56,
+              "fontWeight": "normal",
+              "letterSpacing": -2,
+              "fontStyle": "italic"
+            },
+            {
+              "type": "frame",
+              "id": "dOSlv",
+              "name": "authorInfo",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "bpbUC",
+                  "name": "authorAvatar",
+                  "width": 40,
+                  "height": 40,
+                  "cornerRadius": 20,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "pYT6j",
+                      "name": "authorInitials",
+                      "fill": "#000000",
+                      "content": "SC",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "semibold"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "jEv0L",
+                  "name": "authorName",
+                  "fill": "#000000",
+                  "content": "Sarah Chen",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "medium"
+                },
+                {
+                  "type": "text",
+                  "id": "BtH1u",
+                  "name": "authorTitle",
+                  "fill": "#888888",
+                  "content": "Design Writer",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "oBxs9",
+          "name": "progressSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            0,
+            56,
+            32,
+            56
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "yOwJr",
+              "name": "progressBar",
+              "width": "fill_container",
+              "height": 2,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Q1yEG",
+                  "name": "progressFill",
+                  "width": "fit_content(0)",
+                  "height": "fill_container"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "nPZLW",
+              "name": "progressText",
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "41MnZ",
+                  "name": "progressLabel",
+                  "fill": "#888888",
+                  "content": "Reading progress",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "5T4eR",
+                  "name": "progressValue",
+                  "fill": "#000000",
+                  "content": "60% complete",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "medium"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "y8hPJ",
+          "name": "articleContent",
+          "width": "fill_container",
+          "layout": "vertical",
+          "padding": [
+            0,
+            56,
+            64,
+            56
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "7WJS3",
+              "name": "leadPara",
+              "fill": "#1A1A1A",
+              "content": "Typography is more than just selecting fonts. It is the art of arranging type in a way that makes written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes, line lengths, line-spacing (leading), and letter-spacing (tracking), and adjusting the space between pairs of letters (kerning).",
+              "lineHeight": 1.8,
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "x3gxI",
+              "name": "section1Title",
+              "fill": "#000000",
+              "content": "The Fundamentals",
+              "fontFamily": "Playfair Display",
+              "fontSize": 32,
+              "fontWeight": "normal",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "text",
+              "id": "fm8JN",
+              "name": "para1",
+              "fill": "#333333",
+              "content": "The term typography is also applied to the style, arrangement, and appearance of the letters, numbers, and symbols created by the process. Type design is a closely related craft, sometimes considered part of typography; most typographers do not design typefaces, and some type designers do not consider themselves typographers.",
+              "lineHeight": 1.8,
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "iH0Eh",
+              "name": "para2",
+              "fill": "#333333",
+              "content": "Typography is the work of typesetters (formerly known as compositors), typographers, graphic designers, art directors, manga artists, comic book artists, graffiti artists, and, now, anyone who arranges type for a product. Until the Digital Age, typography was a specialized occupation. Digitization opened up typography to new generations of visual designers and lay users.",
+              "lineHeight": 1.8,
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "XqfJy",
+              "name": "pullQuote",
+              "padding": [
+                48,
+                0
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Fw5mA",
+                  "name": "pullQuoteText",
+                  "fill": "#000000",
+                  "content": "\"Typography needs to be audible. Typography needs to be felt.\"",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 32,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "text",
+                  "id": "JIkH1",
+                  "name": "pullQuoteAuthor",
+                  "fill": "#888888",
+                  "content": "— Helmut Schmid",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "CLu93",
+              "name": "section2Title",
+              "fill": "#000000",
+              "content": "Modern Typography",
+              "fontFamily": "Playfair Display",
+              "fontSize": 32,
+              "fontWeight": "normal",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "text",
+              "id": "qNeKl",
+              "name": "para3",
+              "fill": "#333333",
+              "content": "In contemporary design, typography has evolved from purely functional considerations to become a powerful expressive medium. Digital tools have expanded the possibilities, allowing designers to experiment with variable fonts, responsive typography, and dynamic layouts that adapt to different screens and contexts.",
+              "lineHeight": 1.8,
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "Duc94",
+              "name": "para4",
+              "fill": "#333333",
+              "content": "The choice of typeface and its arrangement on the page can significantly influence how a message is perceived. Bold, sans-serif fonts might convey modernity and strength, while elegant serif fonts can suggest tradition and sophistication. The weight, size, and spacing of type all contribute to the overall visual hierarchy and readability of the content.",
+              "lineHeight": 1.8,
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "lWSmc",
+              "name": "keyPointsBox",
+              "padding": 32,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "n9in9",
+                  "name": "keyPointsTitle",
+                  "fill": "#000000",
+                  "content": "Key Takeaways",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 20,
+                  "fontWeight": "semibold",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "frame",
+                  "id": "h15rI",
+                  "name": "keyPoint1",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tGEEC",
+                      "name": "keyPoint1Bullet",
+                      "fill": "#000000",
+                      "content": "•",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ebyC4",
+                      "name": "keyPoint1Text",
+                      "fill": "#333333",
+                      "content": "Typography combines art and technique to make written language legible and appealing",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "83jfH",
+                  "name": "keyPoint2",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Bgv3V",
+                      "name": "keyPoint2Bullet",
+                      "fill": "#000000",
+                      "content": "•",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "8eMYr",
+                      "name": "keyPoint2Text",
+                      "fill": "#333333",
+                      "content": "Digital tools have revolutionized typographic possibilities",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "XHefh",
+                  "name": "keyPoint3",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RzybE",
+                      "name": "keyPoint3Bullet",
+                      "fill": "#000000",
+                      "content": "•",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "2Ulsn",
+                      "name": "keyPoint3Text",
+                      "fill": "#333333",
+                      "content": "Typeface selection and arrangement significantly influence message perception",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "I0xCM",
+              "name": "section3Title",
+              "fill": "#000000",
+              "content": "Conclusion",
+              "fontFamily": "Playfair Display",
+              "fontSize": 32,
+              "fontWeight": "normal",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "text",
+              "id": "DqjN3",
+              "name": "para5",
+              "fill": "#333333",
+              "content": "Whether in print or on screen, typography remains a fundamental aspect of design that bridges the gap between content and comprehension. As we continue to innovate and explore new possibilities, the core principles of typography—clarity, hierarchy, and expression—remain as relevant today as they have ever been.",
+              "lineHeight": 1.8,
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "aijLo",
+          "name": "articleActions",
+          "width": "fill_container",
+          "gap": 16,
+          "padding": [
+            32,
+            56
+          ],
+          "justifyContent": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "UQdyS",
+              "name": "actionBookmark",
+              "padding": [
+                12,
+                24
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fqTBj",
+                  "name": "actionBookmarkText",
+                  "fill": "#000000",
+                  "content": "☆ Bookmark",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "medium"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "eAesv",
+              "name": "actionShare",
+              "padding": [
+                12,
+                24
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9eL13",
+                  "name": "actionShareText",
+                  "fill": "#000000",
+                  "content": "Share Article",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "medium"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "b0XIC",
+              "name": "actionPrint",
+              "padding": [
+                12,
+                24
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wGhLZ",
+                  "name": "actionPrintText",
+                  "fill": "#000000",
+                  "content": "Print",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "medium"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "kcxzz",
+          "name": "detailFooter",
+          "width": "fill_container",
+          "padding": [
+            48,
+            56
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "UqpXi",
+              "name": "detailFooterLogo",
+              "fill": "#000000",
+              "content": "Reader",
+              "fontFamily": "Playfair Display",
+              "fontSize": 18,
+              "fontWeight": "bold",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "text",
+              "id": "lokCE",
+              "name": "detailFooterTagline",
+              "fill": "#888888",
+              "content": "Elegant reading experience",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "wLmwO",
+              "name": "detailFooterLinks",
+              "gap": 40,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Wbh7G",
+                  "name": "detailFooterLink1",
+                  "fill": "#888888",
+                  "content": "About",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "g4hn5",
+                  "name": "detailFooterLink2",
+                  "fill": "#888888",
+                  "content": "Privacy",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "lxdQI",
+                  "name": "detailFooterLink3",
+                  "fill": "#888888",
+                  "content": "Terms",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
