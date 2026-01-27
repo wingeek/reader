@@ -27,13 +27,13 @@
 ### 安装依赖
 
 ```bash
-pnpm install
+bun install
 ```
 
 ### 开发模式
 
 ```bash
-pnpm dev
+bun dev
 ```
 
 访问 [http://localhost:4321](http://localhost:4321) 查看应用。
@@ -41,13 +41,13 @@ pnpm dev
 ### 构建生产版本
 
 ```bash
-pnpm build
+bun build
 ```
 
 ### 预览生产构建
 
 ```bash
-pnpm preview
+bun preview
 ```
 
 ## 项目结构
