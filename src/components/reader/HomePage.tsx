@@ -4,48 +4,44 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
       {/* Hero Section */}
-      <section className="border-b border-gray-200 px-14 py-20 pt-16">
-        <h1 className="font-playfair text-6xl font-normal italic tracking-tighter">
+      <section className="border-b border-gray-200 px-5 py-8 md:px-14 md:py-20 md:pt-16">
+        <h1 className="font-playfair text-4xl font-normal italic tracking-tight md:text-6xl md:tracking-tighter">
           Welcome back
         </h1>
-        <p className="mt-4 text-base text-gray-500">
+        <p className="mt-3 text-sm text-gray-500 md:mt-4 md:text-base">
           Continue reading where you left off
         </p>
       </section>
 
       {/* Continue Reading Section */}
-      <section className="px-14 py-12">
-        <div className="mb-6 flex items-center justify-between">
-          <h2 className="font-playfair text-2xl font-normal italic">
+      <section className="px-5 py-0 md:px-14 md:py-12">
+        <div className="mb-4 flex items-center justify-between md:mb-6">
+          <h2 className="font-playfair text-xl font-normal italic md:text-2xl">
             Continue Reading
           </h2>
         </div>
 
-        <div className="border border-gray-200 p-8">
-          <div className="flex max-w-2xl flex-col gap-3">
-            {/* Meta */}
-            <div className="flex items-center gap-3">
-              <span className="rounded border border-black bg-black px-2 py-1 text-[10px] font-medium text-white">
-                Design
-              </span>
-              <span className="text-xs text-gray-500">8 min read · 60% complete</span>
-            </div>
-
+        <div className="border border-gray-200 bg-gray-50 p-5 md:p-8 md:bg-white">
+          <div className="flex max-w-full flex-col gap-3 md:max-w-2xl">
             {/* Title */}
-            <h3 className="font-playfair text-2xl font-normal italic">
+            <h3 className="font-playfair text-lg font-normal italic md:text-2xl">
               The Art of Typography
             </h3>
 
-            {/* Excerpt */}
-            <p className="text-sm leading-relaxed text-gray-600">
-              Typography is more than just selecting fonts. It is the art of
-              arranging type...
-            </p>
+            {/* Meta */}
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-gray-500 md:text-sm">8 min read · 60% complete</span>
+            </div>
+
+            {/* Progress Bar */}
+            <div className="h-1 w-full overflow-hidden rounded-full bg-gray-200">
+              <div className="h-full w-[60%] bg-black" />
+            </div>
 
             {/* Button */}
             <Button
               variant="outline"
-              className="mt-4 w-fit border-gray-200"
+              className="mt-2 w-fit border-gray-200 md:mt-4"
             >
               Continue Reading →
             </Button>
@@ -53,8 +49,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="mt-16 flex items-center justify-between border-t border-black px-14 py-12">
+      {/* Footer - Desktop only */}
+      <footer className="mt-8 hidden items-center justify-between border-t border-black px-14 py-12 md:flex">
         <div className="flex flex-col gap-2">
           <div className="font-playfair text-lg font-bold italic">Reader</div>
           <div className="text-xs text-gray-500">Elegant reading experience</div>

@@ -4,9 +4,11 @@ import HomePage from './reader/HomePage';
 import LibraryPage from './reader/LibraryPage';
 import BookmarksPage from './reader/BookmarksPage';
 import ArticleDetailPage from './reader/ArticleDetailPage';
+import MobileBottomNav from './reader/MobileBottomNav';
 
-type Tab = 'home' | 'library' | 'bookmarks';
-type View = Tab | 'article-detail';
+export type Tab = 'home' | 'library' | 'bookmarks';
+export type View = Tab | 'article-detail';
+export type ViewType = View;
 
 export default function ReaderApp() {
   const [currentView, setCurrentView] = useState<View>('home');
@@ -32,11 +34,18 @@ export default function ReaderApp() {
         <Header activeTab={currentView as Tab} onTabChange={handleTabChange} />
       )}
 
-      {currentView === 'home' && <HomePage />}
-      {currentView === 'library' && <LibraryPage onViewArticle={handleViewArticle} />}
-      {currentView === 'bookmarks' && <BookmarksPage onViewArticle={handleViewArticle} />}
-      {currentView === 'article-detail' && (
-        <ArticleDetailPage onBack={handleBackFromArticle} />
+      <main>
+        {currentView === 'home' && <HomePage />}
+        {currentView === 'library' && <LibraryPage onViewArticle={handleViewArticle} />}
+        {currentView === 'bookmarks' && <BookmarksPage onViewArticle={handleViewArticle} />}
+        {currentView === 'article-detail' && (
+          <ArticleDetailPage onBack={handleBackFromArticle} />
+        )}
+      </main>
+
+      {/* Mobile Bottom Navigation - only show on tab views */}
+      {currentView !== 'article-detail' && (
+        <MobileBottomNav currentView={currentView as Tab} onViewChange={handleTabChange} />
       )}
     </div>
   );
