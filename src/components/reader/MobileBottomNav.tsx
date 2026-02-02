@@ -1,6 +1,6 @@
-import { Home, BookOpen, Bookmark } from 'lucide-react';
+import { Home, BookOpen, Bookmark, Rss, Radio } from 'lucide-react';
 
-type Tab = 'home' | 'library' | 'bookmarks';
+type Tab = 'home' | 'library' | 'subscriptions' | 'feed' | 'bookmarks';
 
 interface MobileBottomNavProps {
   currentView: Tab;
@@ -11,6 +11,8 @@ export default function MobileBottomNav({ currentView, onViewChange }: MobileBot
   const navItems = [
     { id: 'home' as Tab, icon: '🏠', label: 'Home', lucideIcon: Home },
     { id: 'library' as Tab, icon: '📚', label: 'Library', lucideIcon: BookOpen },
+    { id: 'subscriptions' as Tab, icon: '📡', label: 'Subscriptions', lucideIcon: Rss },
+    { id: 'feed' as Tab, icon: '📰', label: 'Feed', lucideIcon: Radio },
     { id: 'bookmarks' as Tab, icon: '🔖', label: 'Bookmarks', lucideIcon: Bookmark },
   ];
 
@@ -25,7 +27,7 @@ export default function MobileBottomNav({ currentView, onViewChange }: MobileBot
             <button
               key={item.id}
               onClick={() => onViewChange(item.id)}
-              className="flex flex-col items-center justify-center gap-1 w-[111.67px] h-full transition-colors hover:bg-gray-50 active:bg-gray-100"
+              className="flex flex-col items-center justify-center gap-1 w-16 h-full transition-colors hover:bg-gray-50 active:bg-gray-100"
               aria-label={item.label}
               aria-current={isActive ? 'page' : undefined}
             >

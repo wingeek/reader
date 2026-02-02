@@ -32,3 +32,5 @@ pnpm-debug.log*
 
 .env.local
 _generated
+
+Plan.md

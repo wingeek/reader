@@ -3,10 +3,12 @@ import Header from './reader/Header';
 import HomePage from './reader/HomePage';
 import LibraryPage from './reader/LibraryPage';
 import BookmarksPage from './reader/BookmarksPage';
+import SubscriptionsPage from './reader/SubscriptionsPage';
+import FeedPage from './reader/FeedPage';
 import ArticleDetailPage from './reader/ArticleDetailPage';
 import MobileBottomNav from './reader/MobileBottomNav';
 
-export type Tab = 'home' | 'library' | 'bookmarks';
+export type Tab = 'home' | 'library' | 'subscriptions' | 'feed' | 'bookmarks';
 export type View = Tab | 'article-detail';
 export type ViewType = View;
 
@@ -37,6 +39,8 @@ export default function ReaderApp() {
       <main>
         {currentView === 'home' && <HomePage />}
         {currentView === 'library' && <LibraryPage onViewArticle={handleViewArticle} />}
+        {currentView === 'subscriptions' && <SubscriptionsPage />}
+        {currentView === 'feed' && <FeedPage onViewArticle={handleViewArticle} />}
         {currentView === 'bookmarks' && <BookmarksPage onViewArticle={handleViewArticle} />}
         {currentView === 'article-detail' && (
           <ArticleDetailPage onBack={handleBackFromArticle} />

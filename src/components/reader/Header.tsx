@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import { Bookmark, Home, Library, User } from 'lucide-react';
+import { Bookmark, Home, Library, Rss, Radio, User } from 'lucide-react';
 
 interface HeaderProps {
-  activeTab: 'home' | 'library' | 'bookmarks';
-  onTabChange: (tab: 'home' | 'library' | 'bookmarks') => void;
+  activeTab: 'home' | 'library' | 'subscriptions' | 'feed' | 'bookmarks';
+  onTabChange: (tab: 'home' | 'library' | 'subscriptions' | 'feed' | 'bookmarks') => void;
 }
 
 export default function Header({ activeTab, onTabChange }: HeaderProps) {
   const navItems = [
     { id: 'home' as const, label: 'Home', icon: Home },
     { id: 'library' as const, label: 'Library', icon: Library },
+    { id: 'subscriptions' as const, label: 'Subscriptions', icon: Rss },
+    { id: 'feed' as const, label: 'Feed', icon: Radio },
     { id: 'bookmarks' as const, label: 'Bookmarks', icon: Bookmark },
   ];
 
