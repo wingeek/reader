@@ -1,95 +1,95 @@
 # Reader App - Claude AI Development Guide
 
-## 项目概览
+## Project Overview
 
-Reader 是一个优雅的阅读器应用，采用单色调设计语言，专注于提供沉浸式的阅读体验。项目完全支持移动端响应式设计，使用现代化的技术栈构建。
+Reader is an elegant reader application with a monochromatic design language, focused on providing an immersive reading experience. The project is fully responsive with mobile-first design, built with a modern tech stack.
 
-### 核心特性
+### Core Features
 
-- 📱 **完全响应式设计** - 移动优先，完美适配桌面和移动设备
-- 🎨 **优雅的视觉设计** - 单色调配色、斜体衬线字体、简洁排版
-- 🏃 **高性能** - Astro SSR + React 19 + Tailwind CSS 4
-- 🔒 **类型安全** - 全面的 TypeScript 支持
-- 📐 **设计系统** - 统一的组件和样式规范
-
----
-
-## 技术栈
-
-### 核心框架
-- **Astro 5.0** - 现代化 Web 框架，支持 SSR/SSG
-- **React 19** - 最新版本的用户界面库
-- **TypeScript 5.7** - 类型安全开发
-
-### 样式系统
-- **Tailwind CSS 4.0** - 实用优先的 CSS 框架
-- **Radix UI Themes** - 高质量 UI 组件库
-- **tw-animate-css** - CSS 动画增强
-
-### 后端服务
-- **Convex** - 实时数据库和后端服务
-
-### 开发工具
-- **Bun** - 快速的 JavaScript 运行时
-- **Lucide React** - 图标库
-- **Concurrently** - 并发运行多个开发命令
+- 📱 **Fully Responsive Design** - Mobile-first, perfect for desktop and mobile
+- 🎨 **Elegant Visual Design** - Monochromatic color scheme, italic serif fonts, clean typography
+- 🏃 **High Performance** - Astro SSR + React 19 + Tailwind CSS 4
+- 🔒 **Type Safety** - Full TypeScript support
+- 📐 **Design System** - Unified component and style standards
 
 ---
 
-## 项目架构
+## Tech Stack
 
-### 目录结构
+### Core Frameworks
+- **Astro 5.0** - Modern web framework with SSR/SSG support
+- **React 19** - Latest UI library
+- **TypeScript 5.7** - Type-safe development
+
+### Styling System
+- **Tailwind CSS 4.0** - Utility-first CSS framework
+- **Radix UI Themes** - High-quality UI component library
+- **tw-animate-css** - CSS animation enhancements
+
+### Backend Services
+- **Convex** - Real-time database and backend services
+
+### Development Tools
+- **Bun** - Fast JavaScript runtime
+- **Lucide React** - Icon library
+- **Concurrently** - Run multiple dev commands concurrently
+
+---
+
+## Project Architecture
+
+### Directory Structure
 
 ```
 reader/
 ├── src/
 │   ├── components/
-│   │   ├── reader/              # 阅读器核心组件
-│   │   │   ├── Header.tsx       # 桌面顶部导航 + 移动端Logo
-│   │   │   ├── MobileBottomNav.tsx  # 移动端底部导航栏
-│   │   │   ├── HomePage.tsx     # 首页（欢迎+阅读进度）
-│   │   │   ├── LibraryPage.tsx  # 文章库页
-│   │   │   ├── BookmarksPage.tsx # 书签管理页
-│   │   │   └── ArticleDetailPage.tsx # 文章阅读页
-│   │   ├── ui/                  # UI 基础组件
-│   │   │   ├── button.tsx       # 按钮组件（shadcn/ui）
-│   │   │   └── badge.tsx        # 徽章组件（shadcn/ui）
-│   │   └── ReaderApp.tsx        # 主应用组件（路由+状态管理）
+│   │   ├── reader/              # Core reader components
+│   │   │   ├── Header.tsx       # Desktop top nav + mobile logo
+│   │   │   ├── MobileBottomNav.tsx  # Mobile bottom navigation
+│   │   │   ├── HomePage.tsx     # Home page (welcome + reading progress)
+│   │   │   ├── LibraryPage.tsx  # Article library page
+│   │   │   ├── BookmarksPage.tsx # Bookmarks management page
+│   │   │   └── ArticleDetailPage.tsx # Article reading page
+│   │   ├── ui/                  # UI base components
+│   │   │   ├── button.tsx       # Button component (shadcn/ui)
+│   │   │   └── badge.tsx        # Badge component (shadcn/ui)
+│   │   └── ReaderApp.tsx        # Main app component (routing + state)
 │   ├── layouts/
-│   │   └── Layout.astro         # Astro 页面布局
+│   │   └── Layout.astro         # Astro page layout
 │   ├── pages/
-│   │   └── index.astro          # 应用入口页
+│   │   └── index.astro          # App entry page
 │   └── styles/
-│       └── global.css           # 全局样式+CSS变量
-├── public/                      # 静态资源
-├── astro.config.mjs            # Astro 配置
-├── tailwind.config.mjs         # Tailwind 配置
-├── tsconfig.json               # TypeScript 配置
-└── package.json                # 项目依赖
+│       └── global.css           # Global styles + CSS variables
+├── public/                      # Static assets
+├── astro.config.mjs            # Astro configuration
+├── tailwind.config.mjs         # Tailwind configuration
+├── tsconfig.json               # TypeScript configuration
+└── package.json                # Project dependencies
 ```
 
-### 应用架构
+### Application Architecture
 
-#### 路由系统
+#### Routing System
 
-项目采用**客户端状态路由**（非 URL 路由），通过 `ReaderApp.tsx` 管理视图状态：
+The project uses **client-side state routing** (not URL-based), managed by `ReaderApp.tsx`:
 
 ```typescript
 type Tab = 'home' | 'library' | 'bookmarks';
 type View = Tab | 'article-detail';
 
-// 状态管理
+// State management
 const [currentView, setCurrentView] = useState<View>('home');
 const [previousTab, setPreviousTab] = useState<Tab>('home');
 ```
 
-#### 组件层次
+#### Component Hierarchy
 
 ```
 Layout.astro
 └── ReaderApp
-    ├── Header (桌面导航)
-    ├── MobileBottomNav (移动导航)
+    ├── Header (desktop nav)
+    ├── MobileBottomNav (mobile nav)
     └── Main Content
         ├── HomePage
         ├── LibraryPage
@@ -99,56 +99,56 @@ Layout.astro
 
 ---
 
-## 移动端适配策略
+## Mobile Adaptation Strategy
 
-### 响应式断点
+### Responsive Breakpoints
 
-项目使用 Tailwind CSS 默认断点：
+Project uses Tailwind CSS default breakpoints:
 
-- **移动端**: 默认（< 768px）
-- **桌面端**: `md:` 断点（≥ 768px）
+- **Mobile**: Default (< 768px)
+- **Desktop**: `md:` breakpoint (≥ 768px)
 
-### 设计模式
+### Design Patterns
 
-#### 1. 双导航系统
+#### 1. Dual Navigation System
 
-- **桌面端**: 顶部 Header 导航（`Header.tsx`）
-- **移动端**: 底部 Tab 栏导航（`MobileBottomNav.tsx`）
+- **Desktop**: Top Header navigation (`Header.tsx`)
+- **Mobile**: Bottom Tab bar navigation (`MobileBottomNav.tsx`)
 
 ```typescript
-{/* 桌面导航 - md: 以上显示 */}
+{/* Desktop nav - show on md: and up */}
 <Header className="hidden md:flex" />
 
-{/* 移动导航 - md 以下显示 */}
+{/* Mobile nav - show below md: */}
 <MobileBottomNav className="md:hidden" />
 ```
 
-#### 2. 内容宽度管理
+#### 2. Content Width Management
 
-**移动端**（< 768px）:
-- 文本内容限制宽度: `max-w-[335px]`
-- 防止水平溢出
-- 保持可读性
+**Mobile** (< 768px):
+- Text content width limit: `max-w-[335px]`
+- Prevent horizontal overflow
+- Maintain readability
 
-**桌面端**（≥ 768px）:
-- 全宽显示: `md:max-w-none`
-- 最大宽度约束: `md:max-w-2xl`
-- 居中对齐
+**Desktop** (≥ 768px):
+- Full width display: `md:max-w-none`
+- Max width constraint: `md:max-w-2xl`
+- Center alignment
 
-#### 3. 列表项设计
+#### 3. List Item Design
 
-**移动端**:
-- 卡片样式: `rounded-lg border bg-gray-50 p-4`
-- 完整内边距: 所有边都有 padding
+**Mobile**:
+- Card style: `rounded-lg border bg-gray-50 p-4`
+- Full padding: padding on all sides
 
-**桌面端**:
-- 分隔线样式: `md:border-b md:rounded-none md:bg-transparent md:px-0`
-- 仅水平内边距: `md:px-4`（在 button 内部）
-- 悬停效果: `hover:bg-gray-50`
+**Desktop**:
+- Separator style: `md:border-b md:rounded-none md:bg-transparent md:px-0`
+- Horizontal padding only: `md:px-4` (inside button)
+- Hover effect: `hover:bg-gray-50`
 
-#### 4. Safe Area 支持
+#### 4. Safe Area Support
 
-为 iPhone 刘海屏和底部指示器预留空间：
+Reserve space for iPhone notch and bottom indicator:
 
 ```css
 /* global.css */
@@ -159,29 +159,29 @@ Layout.astro
 }
 ```
 
-应用在 `MobileBottomNav`:
+Apply in `MobileBottomNav`:
 
 ```typescript
 <nav className="... safe-area-inset-bottom">
 ```
 
-#### 5. 底部内边距策略
+#### 5. Bottom Padding Strategy
 
-**Tab 页面**（Home/Library/Bookmarks）:
-- 移动端: `pb-20`（80px）- 防止内容被底部导航遮挡
-- 桌面端: `md:pb-16`（64px）
+**Tab pages** (Home/Library/Bookmarks):
+- Mobile: `pb-20` (80px) - Prevent content from being hidden by bottom nav
+- Desktop: `md:pb-16` (64px)
 
-**文章详情页**:
-- 不显示底部导航，无需额外底部内边距
-- 移动端: `pb-20` 仅用于视觉平衡
+**Article detail page**:
+- No bottom navigation shown, no extra bottom padding needed
+- Mobile: `pb-20` for visual balance only
 
 ---
 
-## 设计系统
+## Design System
 
-### 颜色规范
+### Color Specifications
 
-#### 主色调
+#### Primary Colors
 ```css
 --color-black: #000000;
 --color-gray-400: #CCCCCC;
@@ -190,50 +190,50 @@ Layout.astro
 --color-gray-200: #E0E0E0;
 ```
 
-#### 语义化颜色（Shadcn UI）
+#### Semantic Colors (Shadcn UI)
 ```css
---color-background: oklch(1 0 0);           /* 背景色 */
---color-foreground: oklch(0.129 0.042 264.695);  /* 前景色 */
---color-border: oklch(0.929 0.013 255.508); /* 边框色 */
---color-primary: oklch(0.208 0.042 265.755); /* 主色 */
+--color-background: oklch(1 0 0);           /* Background */
+--color-foreground: oklch(0.129 0.042 264.695);  /* Foreground */
+--color-border: oklch(0.929 0.013 255.508); /* Border */
+--color-primary: oklch(0.208 0.042 265.755); /* Primary */
 ```
 
-### 字体系统
+### Typography System
 
-#### 字体家族
+#### Font Families
 ```css
---font-playfair: 'Playfair Display', serif;  /* 标题字体 */
---font-inter: 'Inter', sans-serif;           /* 正文字体 */
+--font-playfair: 'Playfair Display', serif;  /* Headings font */
+--font-inter: 'Inter', sans-serif;           /* Body font */
 ```
 
-#### 排版规范
+#### Typography Specifications
 
-**标题**（Playfair Display）:
-- H1（桌面）: `text-6xl font-normal italic tracking-tighter`
-- H1（移动）: `text-[44px] font-normal italic leading-tight`
-- H2（桌面）: `text-3xl font-normal italic`
-- H2（移动）: `text-[28px] font-normal italic`
+**Headings** (Playfair Display):
+- H1 (desktop): `text-6xl font-normal italic tracking-tighter`
+- H1 (mobile): `text-[44px] font-normal italic leading-tight`
+- H2 (desktop): `text-3xl font-normal italic`
+- H2 (mobile): `text-[28px] font-normal italic`
 
-**正文**（Inter）:
-- 桌面: `text-base leading-[1.8]` 或 `text-sm`
-- 移动: `text-base leading-[1.8]`
+**Body** (Inter):
+- Desktop: `text-base leading-[1.8]` or `text-sm`
+- Mobile: `text-base leading-[1.8]`
 
-**元数据**:
-- 桌面: `text-sm` 或 `text-xs`
-- 移动: `text-xs`
+**Metadata**:
+- Desktop: `text-sm` or `text-xs`
+- Mobile: `text-xs`
 
-### 间距系统
+### Spacing System
 
-基于 4px 基础单位的间距：
+Spacing based on 4px base unit:
 
-| 用途 | 移动端 | 桌面端 |
-|------|--------|--------|
-| 页面水平内边距 | `px-5` (20px) | `md:px-14` (56px) |
-| 页面垂直内边距 | `py-6` ~ `py-8` | `md:py-16` |
-| 组件间距 | `gap-2` ~ `gap-4` | `md:gap-8` |
-| 列表项间距 | `gap-4` | `md:gap-8` |
+| Purpose | Mobile | Desktop |
+|---------|--------|---------|
+| Page horizontal padding | `px-5` (20px) | `md:px-14` (56px) |
+| Page vertical padding | `py-6` ~ `py-8` | `md:py-16` |
+| Component spacing | `gap-2` ~ `gap-4` | `md:gap-8` |
+| List item spacing | `gap-4` | `md:gap-8` |
 
-### 圆角系统
+### Border Radius System
 
 ```css
 --radius: 0.625rem; /* 10px */
@@ -245,34 +245,34 @@ Layout.astro
 
 ---
 
-## 组件详解
+## Component Details
 
 ### ReaderApp.tsx
 
-**职责**: 主应用容器，管理路由和导航状态
+**Responsibility**: Main app container, manages routing and navigation state
 
-**Props**: 无
+**Props**: None
 
-**状态**:
-- `currentView: View` - 当前激活的视图
-- `previousTab: Tab` - 进入文章页前的标签页
+**State**:
+- `currentView: View` - Current active view
+- `previousTab: Tab` - Tab before entering article page
 
-**核心方法**:
+**Core Methods**:
 ```typescript
-handleTabChange(tab: Tab)      // 切换标签页
-handleViewArticle()            // 进入文章详情
-handleBackFromArticle()        // 返回之前的标签页
+handleTabChange(tab: Tab)      // Switch tab
+handleViewArticle()            // Enter article detail
+handleBackFromArticle()        // Return to previous tab
 ```
 
-**导航规则**:
-- Tab 视图显示 Header + MobileBottomNav
-- ArticleDetail 视图仅显示返回按钮
+**Navigation Rules**:
+- Tab views show Header + MobileBottomNav
+- ArticleDetail view shows only back button
 
 ---
 
 ### Header.tsx
 
-**职责**: 桌面端顶部导航栏
+**Responsibility**: Desktop top navigation bar
 
 **Props**:
 ```typescript
@@ -282,19 +282,19 @@ interface HeaderProps {
 }
 ```
 
-**响应式行为**:
-- 移动端: 仅显示 Logo + 用户头像
-- 桌面端: 完整导航链接 + 用户信息
+**Responsive Behavior**:
+- Mobile: Show only Logo + user avatar
+- Desktop: Full navigation links + user info
 
-**激活状态样式**:
-- 激活: `font-playfair text-base font-semibold italic text-black`
-- 非激活: `font-inter text-sm font-normal text-gray-500`
+**Active State Styles**:
+- Active: `font-playfair text-base font-semibold italic text-black`
+- Inactive: `font-inter text-sm font-normal text-gray-500`
 
 ---
 
 ### MobileBottomNav.tsx
 
-**职责**: 移动端底部 Tab 导航栏
+**Responsibility**: Mobile bottom tab navigation bar
 
 **Props**:
 ```typescript
@@ -304,36 +304,36 @@ interface MobileBottomNavProps {
 }
 ```
 
-**特性**:
-- 固定定位: `fixed bottom-0 left-0 right-0`
-- 高度: `h-[50px]`
-- 图标: 使用语义化 emoji（🏠 📚 🔖）
-- Safe Area 支持
+**Features**:
+- Fixed positioning: `fixed bottom-0 left-0 right-0`
+- Height: `h-[50px]`
+- Icons: Semantic emoji (🏠 📚 🔖)
+- Safe Area support
 
-**激活状态**:
-- 无视觉差异（根据设计要求）
-- 点击触发 `onViewChange`
+**Active State**:
+- No visual difference (per design requirement)
+- Click triggers `onViewChange`
 
 ---
 
 ### HomePage.tsx
 
-**职责**: 欢迎页面，展示阅读进度
+**Responsibility**: Welcome page, displays reading progress
 
-**结构**:
+**Structure**:
 1. Hero Section - "Welcome back"
-2. Continue Reading - 进度卡片
-3. Footer（桌面仅）
+2. Continue Reading - Progress cards
+3. Footer (desktop only)
 
-**响应式特点**:
-- 进度卡片: 移动端 `bg-gray-50`，桌面端 `md:bg-white`
-- 底部内边距: `pb-20` (移动) / `md:pb-16` (桌面)
+**Responsive Features**:
+- Progress cards: Mobile `bg-gray-50`, Desktop `md:bg-white`
+- Bottom padding: `pb-20` (mobile) / `md:pb-16` (desktop)
 
 ---
 
 ### LibraryPage.tsx
 
-**职责**: 文章库页面
+**Responsibility**: Article library page
 
 **Props**:
 ```typescript
@@ -342,19 +342,19 @@ interface LibraryPageProps {
 }
 ```
 
-**结构**:
-1. Hero Section - 标题 + 按钮组（桌面） + 筛选标签
-2. Recent Articles - 文章列表
-3. Footer（桌面仅）
+**Structure**:
+1. Hero Section - Title + button group (desktop) + filter tags
+2. Recent Articles - Article list
+3. Footer (desktop only)
 
-**数据结构**:
+**Data Structure**:
 ```typescript
 {
   id: number;
-  tag: string;        // 分类标签
-  time: string;       // 阅读时长
+  tag: string;        // Category tag
+  time: string;       // Reading time
   title: string;
-  excerpt: string;    // 摘要
+  excerpt: string;    // Summary
   author: string;
   date: string;
 }
@@ -364,7 +364,7 @@ interface LibraryPageProps {
 
 ### BookmarksPage.tsx
 
-**职责**: 书签管理页面
+**Responsibility**: Bookmarks management page
 
 **Props**:
 ```typescript
@@ -373,21 +373,21 @@ interface BookmarksPageProps {
 }
 ```
 
-**结构**:
-1. Hero Section - 标题 + 统计
-2. Bookmarks List - 书签列表
-3. Footer（桌面仅）
+**Structure**:
+1. Hero Section - Title + statistics
+2. Bookmarks List - Bookmarks list
+3. Footer (desktop only)
 
-**与 LibraryPage 的差异**:
-- 显示"保存日期"而非"作者"
-- 每项右侧有"Remove"按钮
-- 无筛选标签
+**Differences from LibraryPage**:
+- Shows "saved date" instead of "author"
+- "Remove" button on right side of each item
+- No filter tags
 
 ---
 
 ### ArticleDetailPage.tsx
 
-**职责**: 文章阅读页面
+**Responsibility**: Article reading page
 
 **Props**:
 ```typescript
@@ -396,62 +396,62 @@ interface ArticleDetailPageProps {
 }
 ```
 
-**结构**:
-1. Back Navigation - 返回按钮
-2. Article Header - 面包屑（移动）+ 元数据 + 标题 + 作者
-3. Progress Bar - 阅读进度条
-4. Article Content - 正文内容
-5. Article Actions（桌面仅）
-6. Footer（桌面仅）
+**Structure**:
+1. Back Navigation - Back button
+2. Article Header - Breadcrumb (mobile) + metadata + title + author
+3. Progress Bar - Reading progress bar
+4. Article Content - Article body
+5. Article Actions (desktop only)
+6. Footer (desktop only)
 
-**特殊处理**:
-- 进度条下边距: `pb-6` (移动) / `md:pb-8` (桌面)
-- 文本宽度限制: `max-w-[335px]` (移动) / `md:max-w-none` (桌面)
-- 无底部导航显示
+**Special Handling**:
+- Progress bar bottom margin: `pb-6` (mobile) / `md:pb-8` (desktop)
+- Text width limit: `max-w-[335px]` (mobile) / `md:max-w-none` (desktop)
+- No bottom navigation shown
 
 ---
 
-## 开发指南
+## Development Guide
 
-### 添加新页面
+### Adding New Pages
 
-#### 1. 创建页面组件
+#### 1. Create Page Component
 
 ```typescript
 // src/components/reader/NewPage.tsx
 interface NewPageProps {
-  // 定义 props
+  // Define props
 }
 
 export default function NewPage({ ...props }: NewPageProps) {
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      {/* 页面内容 */}
-      {/* 移动端底部内边距 */}
+      {/* Page content */}
+      {/* Mobile bottom padding */}
       <section className="px-5 pb-20 md:px-14 md:pb-16">
-        {/* 内容 */}
+        {/* Content */}
       </section>
     </div>
   );
 }
 ```
 
-#### 2. 更新 ReaderApp.tsx
+#### 2. Update ReaderApp.tsx
 
 ```typescript
-// 1. 添加到 View 类型
+// 1. Add to View type
 type View = 'home' | 'library' | 'bookmarks' | 'new-page' | 'article-detail';
 
-// 2. 导入组件
+// 2. Import component
 import NewPage from './reader/NewPage';
 
-// 3. 添加路由渲染
+// 3. Add route rendering
 {currentView === 'new-page' && <NewPage />}
 
-// 4. 如需导航，在 Header.tsx 和 MobileBottomNav.tsx 添加导航项
+// 4. If navigation needed, add nav items in Header.tsx and MobileBottomNav.tsx
 ```
 
-#### 3. 添加导航
+#### 3. Add Navigation
 
 **Header.tsx**:
 ```typescript
@@ -471,78 +471,78 @@ const navItems = [
 
 ---
 
-### 响应式组件开发模式
+### Responsive Component Development Patterns
 
-#### 模式 1: 移动卡片 / 桌面分隔线
+#### Pattern 1: Mobile Card / Desktop Separator
 
 ```tsx
 <article className="rounded-lg border border-gray-200 bg-gray-50 p-4
                     md:border-b md:rounded-none md:bg-transparent
                     md:px-0 md:py-8">
-  {/* 内容 */}
+  {/* Content */}
 </article>
 ```
 
-#### 模式 2: 桌面隐藏 / 移动显示
+#### Pattern 2: Desktop Hide / Mobile Show
 
 ```tsx
 <div className="md:hidden">
-  {/* 仅移动端显示 */}
+  {/* Mobile only */}
 </div>
 
 <div className="hidden md:block">
-  {/* 仅桌面端显示 */}
+  {/* Desktop only */}
 </div>
 ```
 
-#### 模式 3: 宽度约束
+#### Pattern 3: Width Constraints
 
 ```tsx
-{/* 移动端限制宽度，桌面端全宽 */}
+{/* Mobile width limit, desktop full width */}
 <p className="max-w-[335px] md:max-w-none">
-  {/* 内容 */}
+  {/* Content */}
 </p>
 
-{/* 桌面端最大宽度 */}
+{/* Desktop max width */}
 <div className="md:max-w-2xl">
-  {/* 内容 */}
+  {/* Content */}
 </div>
 ```
 
-#### 模式 4: 按钮内边距处理
+#### Pattern 4: Button Padding Handling
 
 ```tsx
 <article className="p-4 md:px-0">
-  {/* 移动端：article 有 padding，button 负 margin 抵消 */}
-  {/* 桌面端：article 无 padding，button 有 padding */}
+  {/* Mobile: article has padding, button negative margin to offset */}
+  {/* Desktop: article no padding, button has padding */}
   <button className="-mx-4 px-0 md:mx-0 md:px-4">
-    {/* 内容 */}
+    {/* Content */}
   </button>
 </article>
 ```
 
 ---
 
-### 样式最佳实践
+### Styling Best Practices
 
-#### 1. 类名排序
+#### 1. Class Name Ordering
 
-按以下顺序组织 Tailwind 类名：
+Organize Tailwind class names in this order:
 
-1. 布局: `flex`, `grid`, `block`
-2. 定位: `relative`, `absolute`, `fixed`
-3. 盒模型: `w-`, `h-`, `m-`, `p-`
-4. 排版: `text-`, `font-`
-5. 颜色: `bg-`, `text-`, `border-`
-6. 响应式: `md:`, `lg:`
-7. 状态: `hover:`, `focus:`
+1. Layout: `flex`, `grid`, `block`
+2. Position: `relative`, `absolute`, `fixed`
+3. Box model: `w-`, `h-`, `m-`, `p-`
+4. Typography: `text-`, `font-`
+5. Colors: `bg-`, `text-`, `border-`
+6. Responsive: `md:`, `lg:`
+7. States: `hover:`, `focus:`
 
 ```tsx
 ❌ <div className="text-black flex bg-white hover:bg-gray-50 md:text-lg">
 ✅ <div className="flex bg-white text-black hover:bg-gray-50 md:text-lg">
 ```
 
-#### 2. 使用变体权威工具
+#### 2. Use Class Variance Authority
 
 ```typescript
 import { cva, type VariantProps } from "class-variance-authority";
@@ -560,22 +560,22 @@ const buttonVariants = cva(
 );
 ```
 
-#### 3. 类型安全的事件处理
+#### 3. Type-Safe Event Handlers
 
 ```typescript
 interface ButtonProps {
-  onClick: () => void;  // ✅ 明确的函数签名
-  // onClick: any;       // ❌ 避免使用 any
+  onClick: () => void;  // ✅ Explicit function signature
+  // onClick: any;       // ❌ Avoid using any
 }
 ```
 
 ---
 
-### 数据流模式
+### Data Flow Patterns
 
-#### 父子通信
+#### Parent-Child Communication
 
-**父组件**:
+**Parent Component**:
 ```typescript
 const [currentView, setCurrentView] = useState<View>('home');
 
@@ -586,7 +586,7 @@ const handleTabChange = (tab: Tab) => {
 <Header activeTab={currentView} onTabChange={handleTabChange} />
 ```
 
-**子组件**:
+**Child Component**:
 ```typescript
 interface HeaderProps {
   activeTab: Tab;
@@ -602,63 +602,63 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
 }
 ```
 
-#### 跨层级通信
+#### Cross-Level Communication
 
-对于深层嵌套组件，考虑使用 Context 或状态管理库（目前项目状态简单，无需引入）。
+For deeply nested components, consider using Context or state management libraries (current project state is simple, no need to introduce yet).
 
 ---
 
-## 常见任务
+## Common Tasks
 
-### 修改主题颜色
+### Change Theme Colors
 
-编辑 `src/styles/global.css`:
+Edit `src/styles/global.css`:
 
 ```css
 :root {
   --color-black: #YOUR_COLOR;
-  /* 或修改 Shadcn UI 变量 */
+  /* Or modify Shadcn UI variables */
   --primary: oklch(YOUR_VALUES);
 }
 ```
 
-### 调整移动端底部导航高度
+### Adjust Mobile Bottom Navigation Height
 
-编辑 `src/components/reader/MobileBottomNav.tsx`:
+Edit `src/components/reader/MobileBottomNav.tsx`:
 
 ```typescript
 <div className="flex h-[YOUR_HEIGHT] items-center...">
 ```
 
-相应调整页面底部内边距:
+Adjust page bottom padding accordingly:
 
 ```typescript
 <section className="... pb-[YOUR_HEIGHT + ADDITIONAL_PADDING]">
 ```
 
-### 添加新的图标
+### Add New Icons
 
-1. 安装图标（如使用 Lucide）:
+1. Install icons (e.g., using Lucide):
 ```bash
-# Lucide React 已安装，直接使用
+# Lucide React already installed, use directly
 import { IconName } from 'lucide-react';
 ```
 
-2. 使用 emoji:
+2. Use emoji:
 ```typescript
-const icon = '🎨';  // 直接使用 Unicode emoji
+const icon = '🎨';  // Direct Unicode emoji
 ```
 
-### 调整断点
+### Adjust Breakpoints
 
-编辑 `tailwind.config.mjs`:
+Edit `tailwind.config.mjs`:
 
 ```javascript
 export default {
   theme: {
     screens: {
-      'md': '768px',  // 默认值
-      // 添加自定义断点
+      'md': '768px',  // Default value
+      // Add custom breakpoints
       'tablet': '640px',
     },
   },
@@ -667,82 +667,82 @@ export default {
 
 ---
 
-## 调试与测试
+## Debugging & Testing
 
-### 开发服务器
+### Development Server
 
 ```bash
-# 启动开发服务器（含 Convex）
+# Start development server (with Convex)
 bun dev
 
-# 仅启动 Web 服务器
+# Start web server only
 bun dev:web
 
-# 预览生产构建
+# Preview production build
 bun preview
 ```
 
-### 类型检查
+### Type Checking
 
 ```bash
-# Astro 类型检查
+# Astro type check
 astro check
 
-# TypeScript 类型检查
+# TypeScript type check
 tsc --noEmit
 ```
 
-### 构建生产版本
+### Build Production Version
 
 ```bash
 bun build
 ```
 
-### 测试响应式设计
+### Test Responsive Design
 
 1. **Chrome DevTools**:
-   - F12 → 切换设备工具栏
-   - 测试常见设备尺寸（iPhone 14 Pro, iPad, Desktop）
+   - F12 → Toggle device toolbar
+   - Test common device sizes (iPhone 14 Pro, iPad, Desktop)
 
-2. **手动测试清单**:
+2. **Manual Testing Checklist**:
    - [ ] iPhone SE (375px)
    - [ ] iPhone 14 Pro (393px)
-   - [ ] iPad (768px) - 测试断点切换
+   - [ ] iPad (768px) - Test breakpoint switching
    - [ ] Desktop (1920px)
-   - [ ] 检查 safe-area 适配（有刘海的设备）
+   - [ ] Check safe-area adaptation (notched devices)
 
 ---
 
-## 性能优化
+## Performance Optimization
 
-### Astro 优化
+### Astro Optimization
 
-- **岛屿架构**: 仅对需要交互的组件使用 React
-- **部分水合**: 默认情况下，Astro 会最小化客户端 JavaScript
+- **Islands Architecture**: Use React only for interactive components
+- **Partial Hydration**: By default, Astro minimizes client-side JavaScript
 
-### React 优化
+### React Optimization
 
 ```typescript
-// 使用 memo 避免不必要的重渲染
+// Use memo to avoid unnecessary re-renders
 export default memo(function MyComponent({ prop }) {
   // ...
 });
 
-// 使用 useCallback 稳定函数引用
+// Use useCallback to stabilize function references
 const handleClick = useCallback(() => {
   // ...
 }, [dependency]);
 ```
 
-### 样式优化
+### Style Optimization
 
 ```css
-/* 使用 CSS 变量实现主题切换 */
+/* Use CSS variables for theme switching */
 :root {
   --color-primary: oklch(0.208 0.042 265.755);
 }
 
-/* 而非 */
+/* Instead of */
 .my-class {
   color: #1a1a1a;
 }
@@ -750,87 +750,247 @@ const handleClick = useCallback(() => {
 
 ---
 
-## 故障排除
+## Troubleshooting
 
-### 问题: 样式不生效
+### Issue: Styles Not Applied
 
-**原因**: Tailwind CSS 4 使用新的编译方式
+**Cause**: Tailwind CSS 4 uses new compilation method
 
-**解决**:
-1. 确保使用了 `@import "tailwindcss"`
-2. 检查类名拼写
-3. 查看浏览器开发者工具中的实际类名
+**Solution**:
+1. Ensure `@import "tailwindcss"` is used
+2. Check class name spelling
+3. View actual class names in browser DevTools
 
-### 问题: 移动端内容被底部导航遮挡
+### Issue: Mobile Content Hidden by Bottom Navigation
 
-**原因**: 缺少底部内边距
+**Cause**: Missing bottom padding
 
-**解决**:
+**Solution**:
 ```typescript
 <section className="px-5 py-4 pb-20 md:px-14 md:py-12 md:pb-16">
 ```
 
-确保有 `pb-20` (80px) 或更大的值。
+Ensure `pb-20` (80px) or larger value.
 
-### 问题: 类型错误
+### Issue: Type Errors
 
-**原因**: 类型定义不匹配
+**Cause**: Type definition mismatch
 
-**解决**:
+**Solution**:
 ```typescript
-// 确保使用导出的类型
+// Ensure using exported types
 import type { Tab, View } from '../ReaderApp';
 
-// 或在组件内定义一致的类型
+// Or define consistent types within component
 type Tab = 'home' | 'library' | 'bookmarks';
 ```
 
-### 问题: Convex 连接失败
+### Issue: Convex Connection Failed
 
-**原因**: Convex dev 服务未运行
+**Cause**: Convex dev service not running
 
-**解决**:
+**Solution**:
 ```bash
-# 启动 Convex 开发服务器
+# Start Convex development server
 bun dev:convex
 
-# 或使用完整命令（自动启动）
+# Or use full command (auto-start)
 bun dev
 ```
 
 ---
 
-## 未来扩展
+## Convex Best Practices
 
-### 可能的功能增强
+### API Path Structure
 
-1. **主题切换**: 实现暗色模式支持
-2. **国际化**: 添加多语言支持
-3. **离线支持**: 使用 Service Workers 实现 PWA
-4. **状态管理**: 引入 Zustand 或 Jotai 管理复杂状态
-5. **动画增强**: 添加页面过渡动画
+Convex uses filesystem structure as API paths. Function call format: `api.{folder}.{file}.{function}`
 
-### 性能优化方向
+**Examples**:
+```typescript
+// File: convex/subscriptions/queries.ts
+export const listAll = query({ ... });
 
-1. **图片优化**: 使用 Astro 的 Image 组件
-2. **代码分割**: 按路由懒加载组件
-3. **CDN 部署**: 部署到 Vercel/Netlify
+// Call
+api.subscriptions.queries.listAll
+
+// File: convex/subscriptions/mutations.ts
+export const remove = mutation({ ... });
+
+// Call
+api.subscriptions.mutations.remove({ subscriptionId: id })
+```
+
+**Rules**:
+- Folder name = first level path
+- File name (without extension) = second level path
+- Exported function name = third level path
+
+### Client Setup
+
+Must wrap application root with `ConvexProvider`:
+
+```typescript
+// src/lib/convex.tsx
+import { ConvexProvider, ConvexReactClient } from 'convex/react';
+
+const convex = new ConvexReactClient(import.meta.env.PUBLIC_CONVEX_URL!);
+
+export default function AppWithConvex() {
+  return (
+    <ConvexProvider client={convex}>
+      <ReaderApp />
+    </ConvexProvider>
+  );
+}
+```
+
+### Environment Variables
+
+Client-accessible variables require `PUBLIC_` prefix:
+
+```bash
+# .env.local
+CONVEX_URL=http://127.0.0.1:3210          # Server-side use
+PUBLIC_CONVEX_URL=http://127.0.0.1:3210   # Client-side use
+```
+
+### Type Imports
+
+Use `type` keyword when importing Convex types (compile-time only):
+
+```typescript
+import type { Id } from '../../../convex/_generated/dataModel';
+
+const id: Id<"subscriptions"> = ...;  // ✅ For type annotations only
+```
+
+### Query Method Chain
+
+Correct query method chaining order:
+
+```typescript
+// ✅ Correct
+const articles = await ctx.db
+  .query("articles")
+  .withIndex("by_collected_desc")
+  .order("desc")
+  .filter((q) => q.eq(q.field("isRead"), false))
+  .take(limit);
+
+// ❌ Wrong - order() inside withIndex callback
+.withIndex("by_collected_desc", (q) => q.order("desc"))
+```
+
+**Method chain order**:
+1. `query(tableName)` - Start query
+2. `withIndex(indexName)` or `withIndex(indexName, (q) => q.eq(...))` - Use index
+3. `order("asc" | "desc")` - Sort (optional)
+4. `filter((q) => ...)` - Client-side filter (optional)
+5. `take(n)` or `paginate(opts)` or `collect()` - Fetch results
+
+### Public vs Internal Functions
+
+**Public functions** - Accessible from client:
+```typescript
+export const listAll = query({ ... });        // Client-accessible
+export const create = mutation({ ... });      // Client-accessible
+```
+
+**Internal functions** - Server-side only:
+```typescript
+export const collectFromSubscriptions = internalMutation({
+  // Only callable by cron or other server functions
+});
+```
+
+Use `internal` reference in `crons.ts`:
+```typescript
+import { internal } from "./_generated/api";
+
+crons.interval(
+  "collect from subscriptions",
+  { hours: 1 },
+  internal.subscriptions.cron.collectFromSubscriptions  // internal path
+);
+```
+
+### Cron Configuration
+
+Cron jobs config file: `convex/crons.ts`
+
+```typescript
+import { cronJobs } from "convex/server";
+import { internal } from "./_generated/api";
+
+const crons = cronJobs();
+
+// Hourly execution
+crons.interval(
+  "job name",
+  { hours: 1 },
+  internal.module.functionName
+);
+
+// Daily at specific time
+crons.cron(
+  "daily job",
+  "0 8 * * *",  // cron expression
+  internal.module.functionName
+);
+
+export default crons;
+```
+
+### Common Errors
+
+#### "Could not find public function"
+**Cause**: Incorrect API path or function not deployed
+**Solution**:
+- Check path format: `api.{folder}.{file}.{function}`
+- Ensure Convex dev is running and sync is complete
+
+#### "useQuery must be used under ConvexProvider"
+**Cause**: Component not wrapped in ConvexProvider
+**Solution**: Wrap app entry with ConvexProvider
+
+#### "Failed to load url .../dataModel"
+**Cause**: Runtime import instead of type import
+**Solution**: Use `import type { Id } from ...`
 
 ---
 
-## 资源链接
+## Future Extensions
 
-- [Astro 文档](https://docs.astro.build)
-- [React 19 文档](https://react.dev)
-- [Tailwind CSS 4 文档](https://tailwindcss.com/docs)
+### Possible Feature Enhancements
+
+1. **Theme Switching**: Add dark mode support
+2. **Internationalization**: Add multi-language support
+3. **Offline Support**: Use Service Workers for PWA
+4. **State Management**: Introduce Zustand or Jotai for complex state
+5. **Animation Enhancement**: Add page transition animations
+
+### Performance Optimization Directions
+
+1. **Image Optimization**: Use Astro's Image component
+2. **Code Splitting**: Lazy load components by route
+3. **CDN Deployment**: Deploy to Vercel/Netlify
+
+---
+
+## Resources
+
+- [Astro Documentation](https://docs.astro.build)
+- [React 19 Documentation](https://react.dev)
+- [Tailwind CSS 4 Documentation](https://tailwindcss.com/docs)
 - [Radix UI Themes](https://www.radix-ui.com/themes)
 - [Lucide Icons](https://lucide.dev)
-- [Convex 文档](https://docs.convex.dev)
+- [Convex Documentation](https://docs.convex.dev)
 
 ---
 
-## 维护者
+## Maintainers
 
-此文档由项目架构设计，随项目演进持续更新。
+This document is designed by the project architecture and updated continuously as the project evolves.
 
-**最后更新**: 2026-01-27
+**Last Updated**: 2026-02-03 (Added Convex Best Practices)
