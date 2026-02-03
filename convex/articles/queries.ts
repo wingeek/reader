@@ -11,7 +11,8 @@ export const listRecent = query({
 
     const articles = await ctx.db
       .query("articles")
-      .withIndex("by_collected_desc", (q) => q.order("desc"))
+      .withIndex("by_collected_desc")
+      .order("desc")
       .take(limit);
 
     return articles;
@@ -60,7 +61,8 @@ export const listUnread = query({
 
     const articles = await ctx.db
       .query("articles")
-      .withIndex("by_collected_desc", (q) => q.order("desc"))
+      .withIndex("by_collected_desc")
+      .order("desc")
       .filter((q) => q.eq(q.field("isRead"), false))
       .take(limit);
 

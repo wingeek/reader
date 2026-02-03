@@ -10,7 +10,7 @@ interface FeedPageProps {
 }
 
 export default function FeedPage({ onViewArticle }: FeedPageProps) {
-  const articles = useQuery(api.articles.listRecent, { limit: 50 });
+  const articles = useQuery(api.articles.queries.listRecent, { limit: 50 });
 
   return (
     <div className="flex min-h-screen flex-col bg-white">

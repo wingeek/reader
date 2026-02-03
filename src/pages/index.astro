@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ReaderApp from '../components/ReaderApp';
+import AppWithConvex from '../lib/convex';
 ---
 
 <Layout title="Reader App">
-  <ReaderApp client:load />
+  <AppWithConvex client:load />
 </Layout>

@@ -1,30 +1,39 @@
 import { useState } from 'react';
+import { useQuery, useMutation } from 'convex/react';
+import { api } from '../../../convex/_generated/api';
+import type { Id } from '../../../convex/_generated/dataModel';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
-import { Plus, Settings, Trash2, Github } from 'lucide-react';
-
-// Temporary mock data - will be replaced with Convex queries
-const mockSubscriptions = [
-  {
-    _id: '1',
-    name: 'facebook/react',
-    sourceType: 'github',
-    description: 'React releases and updates',
-    articleCount: 42,
-    collectionFrequency: 'daily',
-    lastCollectedAt: Date.now() - 3600000, // 1 hour ago
-    isActive: true,
-    filters: { keywords: ['release', 'feature'] },
-  },
-];
+import { Plus, Settings, Trash2, Github, Loader2, CheckCircle2, XCircle } from 'lucide-react';
+import AddSubscriptionModal from './AddSubscriptionModal';
 
 export default function SubscriptionsPage() {
-  const [subscriptions, setSubscriptions] = useState(mockSubscriptions);
+  const subscriptions = useQuery(api.subscriptions.queries.listAll);
+  const removeSubscription = useMutation(api.subscriptions.mutations.remove);
+  const toggleActive = useMutation(api.subscriptions.mutations.toggleActive);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [isDeleting, setIsDeleting] = useState<string | null>(null);
+  const [isToggling, setIsToggling] = useState<Id<"subscriptions"> | null>(null);
 
-  const removeSubscription = (id: string) => {
-    setSubscriptions(subscriptions.filter((s) => s._id !== id));
+  const handleRemove = async (id: Id<"subscriptions">) => {
+    setIsDeleting(id as string);
+    try {
+      await removeSubscription({ subscriptionId: id });
+    } finally {
+      setIsDeleting(null);
+    }
   };
+
+  const handleToggleActive = async (id: Id<"subscriptions">) => {
+    setIsToggling(id);
+    try {
+      await toggleActive({ subscriptionId: id });
+    } finally {
+      setIsToggling(null);
+    }
+  };
+
+  const activeCount = subscriptions?.filter(s => s.isActive).length || 0;
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
@@ -42,7 +51,11 @@ export default function SubscriptionsPage() {
               Subscriptions
             </h1>
             <p className="text-sm text-gray-500">
-              {subscriptions.length} active sources
+              {subscriptions === undefined ? (
+                <Loader2 className="inline h-4 w-4 animate-spin" />
+              ) : (
+                `${activeCount} active source${activeCount !== 1 ? 's' : ''}`
+              )}
             </p>
           </div>
 
@@ -60,12 +73,16 @@ export default function SubscriptionsPage() {
 
       {/* Subscriptions List */}
       <section className="px-5 py-4 pb-20 md:px-14 md:py-12">
-        {subscriptions.length > 0 ? (
+        {subscriptions && subscriptions.length > 0 ? (
           <div className="flex flex-col gap-4 md:gap-6">
             {subscriptions.map((subscription) => (
               <article
                 key={subscription._id}
-                className="rounded-lg border border-gray-200 bg-gray-50 p-4 md:bg-transparent md:px-0 md:py-4"
+                className={`rounded-lg border p-4 transition-colors ${
+                  subscription.isActive
+                    ? 'border-gray-200 bg-gray-50 md:bg-transparent'
+                    : 'border-gray-100 bg-gray-50 opacity-60 md:bg-transparent'
+                } md:px-0 md:py-4`}
               >
                 <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                   {/* Subscription Info */}
@@ -77,16 +94,23 @@ export default function SubscriptionsPage() {
                       <h3 className="font-playfair text-lg font-normal italic">
                         {subscription.name}
                       </h3>
+                      {subscription.isActive ? (
+                        <CheckCircle2 className="h-4 w-4 text-green-600" />
+                      ) : (
+                        <XCircle className="h-4 w-4 text-gray-400" />
+                      )}
                     </div>
 
-                    {subscription.description && (
-                      <p className="text-sm text-gray-500">{subscription.description}</p>
+                    {subscription.sourceConfig && (
+                      <p className="text-sm text-gray-500">
+                        {(subscription.sourceConfig as any).owner}/{(subscription.sourceConfig as any).repo}
+                      </p>
                     )}
 
                     <div className="flex items-center gap-3 text-xs text-gray-500">
                       <span>{subscription.articleCount} articles</span>
                       <span>·</span>
-                      <span>{subscription.collectionFrequency}</span>
+                      <span className="capitalize">{subscription.collectionFrequency}</span>
                       {subscription.lastCollectedAt && (
                         <>
                           <span>·</span>
@@ -100,23 +124,37 @@ export default function SubscriptionsPage() {
 
                   {/* Actions */}
                   <div className="flex items-center gap-2">
-                    <Button variant="outline" size="sm">
-                      <Settings className="h-4 w-4" />
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handleToggleActive(subscription._id)}
+                      disabled={isToggling === subscription._id}
+                    >
+                      {isToggling === subscription._id ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Settings className="h-4 w-4" />
+                      )}
                     </Button>
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => removeSubscription(subscription._id)}
+                      onClick={() => handleRemove(subscription._id)}
+                      disabled={isDeleting === subscription._id}
                     >
-                      <Trash2 className="h-4 w-4" />
+                      {isDeleting === subscription._id ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Trash2 className="h-4 w-4" />
+                      )}
                     </Button>
                   </div>
                 </div>
 
                 {/* Filters Display */}
-                {subscription.filters && (
+                {subscription.filters && (subscription.filters as any).keywords && (
                   <div className="mt-3 flex flex-wrap gap-2 md:ml-48">
-                    {subscription.filters.keywords?.map((keyword) => (
+                    {(subscription.filters as any).keywords?.map((keyword: string) => (
                       <Badge key={keyword} variant="outline" className="text-xs">
                         {keyword}
                       </Badge>
@@ -125,6 +163,11 @@ export default function SubscriptionsPage() {
                 )}
               </article>
             ))}
+          </div>
+        ) : subscriptions === undefined ? (
+          // Loading state
+          <div className="flex items-center justify-center py-20">
+            <Loader2 className="h-8 w-8 animate-spin text-gray-300" />
           </div>
         ) : (
           // Empty state
@@ -148,29 +191,7 @@ export default function SubscriptionsPage() {
       </section>
 
       {/* Add Subscription Modal */}
-      {showAddModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-5">
-          <div className="w-full max-w-md rounded-lg bg-white p-6">
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="font-playfair text-2xl font-normal italic">
-                Add Subscription
-              </h2>
-              <button
-                onClick={() => setShowAddModal(false)}
-                className="text-gray-400 hover:text-black"
-              >
-                ✕
-              </button>
-            </div>
-            <p className="text-sm text-gray-500">
-              Add GitHub repos, HackerNews, Product Hunt, and WeChat subscriptions.
-            </p>
-            <Button className="mt-6 w-full" onClick={() => setShowAddModal(false)}>
-              Close
-            </Button>
-          </div>
-        </div>
-      )}
+      <AddSubscriptionModal isOpen={showAddModal} onClose={() => setShowAddModal(false)} />
     </div>
   );
 }

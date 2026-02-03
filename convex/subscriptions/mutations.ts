@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { mutation } from "../_generated/server";
+import { mutation, internalMutation } from "../_generated/server";
 
 // Create a new subscription
 export const create = mutation({
@@ -26,6 +26,50 @@ export const create = mutation({
     });
 
     return subscriptionId;
+  },
+});
+
+// Update subscription
+export const update = mutation({
+  args: {
+    subscriptionId: v.id("subscriptions"),
+    name: v.optional(v.string()),
+    description: v.optional(v.string()),
+    sourceConfig: v.optional(v.any()),
+    filters: v.optional(v.any()),
+    isActive: v.optional(v.boolean()),
+    collectionFrequency: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const { subscriptionId, ...updates } = args;
+    const now = Date.now();
+
+    await ctx.db.patch(subscriptionId, {
+      ...updates,
+      updatedAt: now,
+    });
+
+    return subscriptionId;
+  },
+});
+
+// Toggle subscription active status
+export const toggleActive = mutation({
+  args: {
+    subscriptionId: v.id("subscriptions"),
+  },
+  handler: async (ctx, args) => {
+    const subscription = await ctx.db.get(args.subscriptionId);
+    if (!subscription) {
+      throw new Error("Subscription not found");
+    }
+
+    await ctx.db.patch(args.subscriptionId, {
+      isActive: !subscription.isActive,
+      updatedAt: Date.now(),
+    });
+
+    return !subscription.isActive;
   },
 });
 
