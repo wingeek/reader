@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useMutation, useQuery } from 'convex/react';
+import { useMutation, useAction } from 'convex/react';
 import { api } from '../../../convex/_generated/api';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
@@ -12,8 +12,8 @@ interface AddSubscriptionModalProps {
 
 export default function AddSubscriptionModal({ isOpen, onClose }: AddSubscriptionModalProps) {
   const createSubscription = useMutation(api.subscriptions.mutations.create);
-  const collectReleases = useMutation(api.collections.github.collectReleases);
-  const collectIssues = useMutation(api.collections.github.collectIssues);
+  const collectReleases = useAction(api.collections.github.collectReleases);
+  const collectIssues = useAction(api.collections.github.collectIssues);
 
   const [sourceType, setSourceType] = useState<'github' | 'hackernews' | 'producthunt' | 'wechat'>('github');
   const [owner, setOwner] = useState('');

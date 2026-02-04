@@ -1,5 +1,6 @@
 import { v } from "convex/values";
 import { action, mutation } from "../_generated/server";
+import { internal } from "../_generated/api";
 
 // GitHub collector - fetches releases, issues, PRs
 export const collectReleases = action({
