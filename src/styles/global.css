@@ -177,3 +177,34 @@
     padding-bottom: calc(env(safe-area-inset-bottom));
   }
 }
+
+/* Dropdown menu animation */
+@keyframes dropdown-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes dropdown-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.95);
+  }
+}
+
+.dropdown-menu-enter {
+  animation: dropdown-enter 0.2s ease-out forwards;
+}
+
+.dropdown-menu-exit {
+  animation: dropdown-exit 0.15s ease-in forwards;
+}

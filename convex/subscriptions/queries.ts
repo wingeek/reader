@@ -64,3 +64,37 @@ export const listDueForCollection = query({
     return subscriptions;
   },
 });
+
+// Check if a subscription already exists for the same source
+export const checkDuplicate = query({
+  args: {
+    sourceType: v.string(),
+    owner: v.optional(v.string()),
+    repo: v.optional(v.string()),
+    userId: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const userId = args.userId || "guest";
+
+    // Get all subscriptions for this user
+    const subscriptions = await ctx.db
+      .query("subscriptions")
+      .withIndex("by_user", (q) => q.eq("userId", userId))
+      .collect();
+
+    // Filter for matching sourceType and sourceConfig
+    const duplicate = subscriptions.find((sub) => {
+      if (sub.sourceType !== args.sourceType) return false;
+
+      // For GitHub, check if owner and repo match
+      if (args.sourceType === "github" && args.owner && args.repo) {
+        const config = sub.sourceConfig as { owner?: string; repo?: string } | undefined;
+        return config?.owner === args.owner && config?.repo === args.repo;
+      }
+
+      return false;
+    });
+
+    return duplicate ? { exists: true, subscription: duplicate } : { exists: false, subscription: null };
+  },
+});

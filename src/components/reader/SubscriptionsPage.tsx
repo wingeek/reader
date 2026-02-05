@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '../../../convex/_generated/api';
 import type { Id } from '../../../convex/_generated/dataModel';
 import { Button } from '../ui/button';
-import { Plus, MoreVertical, Loader2 } from 'lucide-react';
+import { Plus, MoreVertical, Loader2, Trash2, AlertTriangle } from 'lucide-react';
 import AddSubscriptionModal from './AddSubscriptionModal';
 
 type FilterType = 'all' | 'blogs' | 'news' | 'podcasts';
@@ -13,6 +13,15 @@ export default function SubscriptionsPage() {
   const removeSubscription = useMutation(api.subscriptions.mutations.remove);
   const [showAddModal, setShowAddModal] = useState(false);
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+
+  // Delete confirmation state
+  const [deleteConfirm, setDeleteConfirm] = useState<{
+    show: boolean;
+    subscriptionId: Id<'subscriptions'> | null;
+    subscriptionName: string;
+  }>({ show: false, subscriptionId: null, subscriptionName: '' });
+
+  const [isDeleting, setIsDeleting] = useState(false);
 
   // Calculate stats
   const activeCount = subscriptions?.filter(s => s.isActive).length || 0;
@@ -29,6 +38,31 @@ export default function SubscriptionsPage() {
   // Split into two columns
   const leftColumn = filteredSubscriptions.filter((_, i) => i % 2 === 0);
   const rightColumn = filteredSubscriptions.filter((_, i) => i % 2 === 1);
+
+  // Handle delete with confirmation
+  const handleDeleteClick = (subscriptionId: Id<'subscriptions'>, subscriptionName: string) => {
+    setDeleteConfirm({ show: true, subscriptionId, subscriptionName });
+  };
+
+  const confirmDelete = async () => {
+    if (!deleteConfirm.subscriptionId) return;
+
+    setIsDeleting(true);
+    try {
+      await removeSubscription({ subscriptionId: deleteConfirm.subscriptionId });
+      setDeleteConfirm({ show: false, subscriptionId: null, subscriptionName: '' });
+    } catch (error) {
+      console.error('Failed to delete subscription:', error);
+    } finally {
+      setIsDeleting(false);
+    }
+  };
+
+  const cancelDelete = () => {
+    if (!isDeleting) {
+      setDeleteConfirm({ show: false, subscriptionId: null, subscriptionName: '' });
+    }
+  };
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
@@ -119,6 +153,7 @@ export default function SubscriptionsPage() {
                 <SubscriptionCard
                   key={subscription._id}
                   subscription={subscription}
+                  onDeleteClick={handleDeleteClick}
                 />
               ))}
             </div>
@@ -129,6 +164,7 @@ export default function SubscriptionsPage() {
                 <SubscriptionCard
                   key={subscription._id}
                   subscription={subscription}
+                  onDeleteClick={handleDeleteClick}
                 />
               ))}
             </div>
@@ -161,12 +197,97 @@ export default function SubscriptionsPage() {
 
       {/* Add Subscription Modal */}
       <AddSubscriptionModal isOpen={showAddModal} onClose={() => setShowAddModal(false)} />
+
+      {/* Delete Confirmation Modal */}
+      {deleteConfirm.show && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="w-96 bg-white shadow-2xl">
+            {/* Header */}
+            <div className="flex items-center gap-3 px-6 py-6 pb-5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
+                <AlertTriangle className="h-5 w-5 text-red-600" />
+              </div>
+              <h2 className="font-playfair text-xl font-normal italic text-black">
+                Delete Subscription?
+              </h2>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-[#F0F0F0]" />
+
+            {/* Content */}
+            <div className="px-6 py-5">
+              <p className="text-sm text-gray-600">
+                Are you sure you want to delete <span className="font-medium text-black">"{deleteConfirm.subscriptionName}"</span>?
+                This action cannot be undone.
+              </p>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-[#F0F0F0]" />
+
+            {/* Actions */}
+            <div className="flex justify-end gap-3 px-6 py-5">
+              <button
+                onClick={cancelDelete}
+                disabled={isDeleting}
+                className="h-11 w-30 border border-[#E5E5E5] text-black transition-colors hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmDelete}
+                disabled={isDeleting}
+                className="flex h-11 w-auto items-center justify-center gap-2 bg-red-600 px-5 text-white transition-colors hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isDeleting ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Deleting...
+                  </>
+                ) : (
+                  <>
+                    <Trash2 className="h-4 w-4" />
+                    Delete
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
 // Subscription Card Component
-function SubscriptionCard({ subscription }: { subscription: any }) {
+function SubscriptionCard({
+  subscription,
+  onDeleteClick
+}: {
+  subscription: any;
+  onDeleteClick: (subscriptionId: Id<'subscriptions'>, subscriptionName: string) => void;
+}) {
+  const [showMenu, setShowMenu] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setShowMenu(false);
+      }
+    }
+
+    if (showMenu) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showMenu]);
+
   // Generate icon letter from first character
   const iconLetter = subscription.name?.charAt(0).toUpperCase() || '?';
 
@@ -177,6 +298,11 @@ function SubscriptionCard({ subscription }: { subscription: any }) {
   const updateTime = subscription.lastCollectedAt
     ? formatRelativeTime(new Date(subscription.lastCollectedAt))
     : 'Not updated';
+
+  const handleDeleteClick = () => {
+    onDeleteClick(subscription._id, subscription.name);
+    setShowMenu(false);
+  };
 
   return (
     <article className="group relative rounded-xl bg-[#F9F9F9] p-7 transition-all hover:bg-[#F2F2F2] hover:shadow-md md:p-8">
@@ -210,10 +336,30 @@ function SubscriptionCard({ subscription }: { subscription: any }) {
             </span>
           )}
 
-          {/* Menu Button */}
-          <button className="rounded p-2 text-gray-600 transition-colors hover:bg-gray-200 hover:text-black">
-            <MoreVertical className="h-5 w-5" />
-          </button>
+          {/* Menu Button with Dropdown */}
+          <div className="relative" ref={menuRef}>
+            <button
+              onClick={() => setShowMenu(!showMenu)}
+              className="rounded p-2 text-gray-600 transition-colors hover:bg-gray-200 hover:text-black"
+              aria-label="More options"
+            >
+              <MoreVertical className="h-5 w-5" />
+            </button>
+
+            {/* Dropdown Menu */}
+            {showMenu && (
+              <div className="dropdown-menu-enter absolute right-0 top-full z-10 mt-2 w-48 rounded-md border border-gray-200 bg-white py-1 shadow-lg origin-top">
+                {/* Delete Option */}
+                <button
+                  onClick={handleDeleteClick}
+                  className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm text-red-600 transition-colors hover:bg-red-50"
+                >
+                  <Trash2 className="h-4 w-4" />
+                  Delete
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </article>

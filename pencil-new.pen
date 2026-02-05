@@ -4785,6 +4785,680 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "cpppn",
+      "x": 6000,
+      "y": 100,
+      "name": "Add Subscription Modal",
+      "width": 1440,
+      "height": 900,
+      "fill": "#00000080",
+      "layout": "vertical",
+      "padding": 56,
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "hMCjt",
+          "name": "Modal Card",
+          "width": 480,
+          "fill": "#FFFFFF",
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000033",
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "blur": 32
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "pIDpH",
+              "name": "Header Section",
+              "width": "fill_container",
+              "padding": [
+                24,
+                24,
+                20,
+                24
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "MWaop",
+                  "name": "Modal Title",
+                  "fill": "#000000",
+                  "content": "Add Subscription",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 24,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "frame",
+                  "id": "YRReq",
+                  "name": "Close Button",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "transparent",
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "fill": "transparent"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "uXdec",
+                      "name": "close icon",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "x",
+                      "iconFontFamily": "lucide",
+                      "fill": "#888888"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "Zblhm",
+              "name": "Divider",
+              "fill": "#F0F0F0",
+              "width": "fill_container",
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 1,
+                "fill": "#F0F0F0"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "uJkPn",
+              "name": "Source Type Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                20,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "UTO1N",
+                  "name": "Source Type Label",
+                  "fill": "#000000",
+                  "content": "Source Type",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "Cubgx",
+                  "name": "Source Type Buttons",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lu2bR",
+                      "name": "GitHub Button Active",
+                      "width": "fill_container",
+                      "height": 40,
+                      "fill": "#000000",
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 1,
+                        "fill": "#000000"
+                      },
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "R39u5",
+                          "name": "github icon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "github",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FFFFFF"
+                        },
+                        {
+                          "type": "text",
+                          "id": "JD8Bh",
+                          "name": "GitHub Button Text",
+                          "fill": "#FFFFFF",
+                          "content": "GitHub",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "wjsLl",
+                      "name": "HackerNews Button Disabled",
+                      "width": "fill_container",
+                      "height": 40,
+                      "fill": "#F5F5F5",
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 1,
+                        "fill": "#E5E5E5"
+                      },
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "gK2M1",
+                          "name": "hnTextContent",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ArX8C",
+                              "fill": "#AAAAAA",
+                              "content": "HackerNews",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "RzxUU",
+                      "name": "ProductHunt Button Disabled",
+                      "width": "fill_container",
+                      "height": 40,
+                      "fill": "#F5F5F5",
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 1,
+                        "fill": "#E5E5E5"
+                      },
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "6biW6",
+                          "name": "phTextContent",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "2PF0X",
+                              "fill": "#AAAAAA",
+                              "content": "Product Hunt",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "HJm5Z",
+                      "name": "WeChat Button Disabled",
+                      "width": "fill_container",
+                      "height": 40,
+                      "fill": "#F5F5F5",
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 1,
+                        "fill": "#E5E5E5"
+                      },
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "urcwJ",
+                          "name": "wechatTextContent",
+                          "gap": 6,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "puE4x",
+                              "fill": "#AAAAAA",
+                              "content": "WeChat",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "Z0hu2",
+              "name": "Divider 2",
+              "fill": "#F0F0F0",
+              "width": "fill_container",
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 1,
+                "fill": "#F0F0F0"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "RsMe1",
+              "name": "GitHub Form Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                20,
+                24
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "B7Euc",
+                  "name": "Owner Repo Row",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "9nWnH",
+                      "name": "Owner Field",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "GPrOB",
+                          "name": "Owner Label",
+                          "fill": "#000000",
+                          "content": "Owner",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "vVQbj",
+                          "name": "Owner Input",
+                          "width": "fill_container",
+                          "height": 44,
+                          "fill": "#FFFFFF",
+                          "stroke": {
+                            "align": "center",
+                            "thickness": 1,
+                            "fill": "#E5E5E5"
+                          },
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "qBrTD",
+                              "name": "Owner Placeholder",
+                              "fill": "#AAAAAA",
+                              "content": "facebook",
+                              "textAlignVertical": "middle",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VRSce",
+                      "name": "Repo Field",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 6,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "OV4f7",
+                          "name": "Repo Label",
+                          "fill": "#000000",
+                          "content": "Repository",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "noADw",
+                          "name": "Repo Input",
+                          "width": "fill_container",
+                          "height": 44,
+                          "fill": "#FFFFFF",
+                          "stroke": {
+                            "align": "center",
+                            "thickness": 1,
+                            "fill": "#E5E5E5"
+                          },
+                          "padding": [
+                            0,
+                            12
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "AYcxX",
+                              "name": "Repo Placeholder",
+                              "fill": "#AAAAAA",
+                              "content": "react",
+                              "textAlignVertical": "middle",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Ykk27",
+                  "name": "Name Field",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QleZE",
+                      "name": "Name Label",
+                      "fill": "#000000",
+                      "content": "Name (optional)",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Dfo29",
+                      "name": "Name Input",
+                      "width": "fill_container",
+                      "height": 44,
+                      "fill": "#FFFFFF",
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 1,
+                        "fill": "#E5E5E5"
+                      },
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "pDKhQ",
+                          "name": "Name Placeholder",
+                          "fill": "#AAAAAA",
+                          "content": "My React Subscription",
+                          "textAlignVertical": "middle",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vGgcR",
+                  "name": "Frequency Field",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 6,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ApSHs",
+                      "name": "Frequency Label",
+                      "fill": "#000000",
+                      "content": "Collection Frequency",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "W0xgD",
+                      "name": "Frequency Select",
+                      "width": "fill_container",
+                      "height": 44,
+                      "fill": "#FFFFFF",
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 1,
+                        "fill": "#E5E5E5"
+                      },
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "cnQbx",
+                          "name": "Frequency Value",
+                          "fill": "#000000",
+                          "content": "Daily",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "nArWo",
+                          "name": "chevron icon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "chevron-down",
+                          "iconFontFamily": "lucide",
+                          "fill": "#888888"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aMrhM",
+              "name": "Actions Section",
+              "width": "fill_container",
+              "gap": 12,
+              "padding": [
+                20,
+                24
+              ],
+              "justifyContent": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "bVF2K",
+                  "name": "Cancel Button",
+                  "width": 120,
+                  "height": 44,
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "fill": "#E5E5E5"
+                  },
+                  "gap": 8,
+                  "padding": [
+                    0,
+                    16
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "4edwk",
+                      "name": "Cancel Text",
+                      "fill": "#000000",
+                      "content": "Cancel",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "9wRMP",
+                  "name": "Add Subscription Button",
+                  "width": 180,
+                  "height": 44,
+                  "fill": "#000000",
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "fill": "#000000"
+                  },
+                  "gap": 8,
+                  "padding": [
+                    0,
+                    16
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "30lpl",
+                      "name": "plus icon",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "plus",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "SZXXU",
+                      "name": "Add Text",
+                      "fill": "#FFFFFF",
+                      "content": "Add Subscription",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "hr6qi",
+              "name": "Divider 3",
+              "fill": "#F0F0F0",
+              "width": "fill_container",
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 1,
+                "fill": "#F0F0F0"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "9tCPS",
+              "name": "Help Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "padding": [
+                16,
+                24,
+                24,
+                24
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "aQRf8",
+                  "name": "Help Text",
+                  "fill": "#888888",
+                  "content": "We'll collect releases and issues from this repository.",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
